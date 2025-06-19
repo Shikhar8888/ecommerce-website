@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details - eShop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Header (Same as index.html) -->
+    <header class="sticky top-0 bg-white shadow z-50">
+        <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="text-2xl font-bold">eShop</div>
+            <div class="hidden md:flex space-x-6">
+                <a href="index.html" class="hover:text-blue-600">Home</a>
+                <a href="category.html" class="hover:text-blue-600">Categories</a>
+                <a href="#offers" class="hover:text-blue-600">Offers</a>
+                <a href="#account" class="hover:text-blue-600">Account</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="#search" class="hover:text-blue-600"><i class="fas fa-search"></i></a>
+                <a href="cart.html" class="hover:text-blue-600"><i class="fas fa-shopping-cart"></i></a>
+                <button id="hamburger" class="md:hidden"><i class="fas fa-bars"></i></button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden bg-white shadow-md md:hidden">
+            <a href="index.html" class="block px-4 py-2 hover:bg-gray-100">Home</a>
+            <a href="category.html" class="block px-4 py-2 hover:bg-gray-100">Categories</a>
+            <a href="#offers" class="block px-4 py-2 hover:bg-gray-100">Offers</a>
+            <a href="#account" class="block px-4 py-2 hover:bg-gray-100">Account</a>
+        </div>
+    </header>
+
+    <!-- Product Detail Page -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Product Images -->
+            <div>
+                <img src="https://via.placeholder.com/400" alt="Product" class="w-full h-96 object-cover rounded">
+                <div class="flex mt-4 space-x-2">
+                    <img src="https://via.placeholder.com/100" alt="Thumbnail" class="w-20 h-20 object-cover rounded cursor-pointer">
+                    <img src="https://via.placeholder.com/100" alt="Thumbnail" class="w-20 h-20 object-cover rounded cursor-pointer">
+                </div>
+            </div>
+            <!-- Product Info -->
+            <div>
+                <h1 class="text-3xl font-bold">Product Name</h1>
+                <p class="text-2xl text-gray-600 mt-2">₹999</p>
+                <div class="flex items-center mt-2">
+                    <i class="fas fa-star text-yellow-400"></i>
+                    <span class="ml-2">4.5 (120 reviews)</span>
+                </div>
+                <p class="mt-4 text-gray-600">Product description goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <div class="mt-4">
+                    <label class="font-semibold">Size:</label>
+                    <select class="ml-2 border p-2 rounded">
+                        <option>S</option>
+                        <option>M</option>
+                        <option>L</option>
+                    </select>
+                </div>
+                <div class="mt-4">
+                    <label class="font-semibold">Color:</label>
+                    <div class="flex space-x-2 mt-2">
+                        <button class="w-8 h-8 bg-red-500 rounded-full"></button>
+                        <button class="w-8 h-8 bg-blue-500 rounded-full"></button>
+                    </div>
+                </div>
+                <div class="mt-4 flex space-x-4">
+                    <button class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">Add to Cart</button>
+                    <button class="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700">Buy Now</button>
+                </div>
+                <div class="mt-4">
+                    <p><i class="fas fa-truck"></i> Delivery in 3-5 days</p>
+                    <p><i class="fas fa-check-circle"></i> In Stock</p>
+                </div>
+            </div>
+        </div>
+        <!-- Reviews Section -->
+        <div class="mt-8">
+            <h2 class="text-2xl font-bold mb-4">Customer Reviews</h2>
+            <div class="bg-white p-4 rounded shadow">
+                <p class="font-semibold">John Doe</p>
+                <p class="text-gray-600">Great product! Worth the price.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer (Same as index.html) -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4 grid md:grid-cols-4 gap-8">
+            <div>
+                <h3 class="text-lg font-bold">eShop</h3>
+                <p class="mt-2">Your one-stop shop for everything trendy.</p>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold">Links</h3>
+                <ul class="mt-2 space-y-2">
+                    <li><a href="index.html" class="hover:text-blue-400">Home</a></li>
+                    <li><a href="category.html" class="hover:text-blue-400">Categories</a></li>
+                    <li><a href="#contact" class="hover:text-blue-400">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold">Policies</h3>
+                <ul class="mt-2 space-y-2">
+                    <li><a href="#privacy" class="hover:text-blue-400">Privacy Policy</a></li>
+                    <li><a href="#terms" class="hover:text-blue-400">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold">Follow Us</h3>
+                <div class="mt-2 flex space-x-4">
+                    <a href="#facebook" class="hover:text-blue-400"><i class="fab fa-facebook"></i></a>
+                    <a href="#instagram" class="hover:text-blue-400"><i class="fab fa-instagram"></i></a>
+                    <a href="#twitter" class="hover:text-blue-400"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
