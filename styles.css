@@ -26,10 +26,10 @@ button:hover, .btn:hover {
   border: 2px solid var(--primary-blue);
 }
 
-.product-item img {
+.product-item img, .cart-item img, .main-image, .thumbnail {
   transition: transform 0.3s ease;
 }
 
-.product-item:hover img {
+.product-item:hover img, .cart-item:hover img, .thumbnail:hover {
   transform: scale(1.05);
 }
