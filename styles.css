@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@500;600;700&display=swap');
+
+:root {
+  --primary-blue: #2563EB;
+  --secondary-gray: #4B5563;
+  --accent-yellow: #FBBF24;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', system-ui, -apple-system, sans-serif;
+}
+
+button, .btn {
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+button:hover, .btn:hover {
+  transform: scale(1.05);
+}
+
+.color-btn.active {
+  border: 2px solid var(--primary-blue);
+}
+
+.product-item img {
+  transition: transform 0.3s ease;
+}
+
+.product-item:hover img {
+  transform: scale(1.05);
+}
