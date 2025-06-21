@@ -5,23 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>eShop</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="font-sans">
-    <header class="bg-gray-900 text-white">
+<body class="font-sans text-gray-900">
+    <header class="bg-gray-800 text-white">
         <nav class="container mx-auto flex justify-between items-center p-4">
-            <a href="index.html" class="text-2xl font-bold">eShop</a>
-            <div class="hidden md:flex space-x-4">
+            <a href="index.html" class="text-2xl font-bold font-[Poppins]">eShop</a>
+            <div class="hidden md:flex space-x-4 text-base font-medium">
                 <a href="index.html" class="hover:text-gray-300">Home</a>
                 <a href="category.html" class="hover:text-gray-300">Categories</a>
                 <a href="#" class="hover:text-gray-300">Offers</a>
                 <a href="account.html" class="hover:text-gray-300">Account</a>
             </div>
-            <div class="md:hidden">
-                <button id="hamburger" class="text-white">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                    </svg>
-                </button>
+            <div class="flex items-center space-x-4">
+                <a href="#search" class="hover:text-gray-300"><i class="fas fa-search"></i></a>
+                <a href="cart.html" class="hover:text-gray-300"><i class="fas fa-shopping-cart"></i></a>
+                <button id="hamburger" class="md:hidden"><i class="fas fa-bars"></i></button>
             </div>
         </nav>
         <div id="mobile-menu" class="hidden bg-gray-800 text-white">
@@ -32,7 +32,7 @@
         </div>
         <div class="container mx-auto p-4">
             <div class="flex items-center space-x-2">
-                <input type="text" id="search-bar" class="w-full p-2 rounded-l-md border-none focus:ring-2 focus:ring-blue-500" placeholder="Search products...">
+                <input type="text" id="search-bar" class="w-full p-2 rounded-l-md border-none focus:ring-2 focus:ring-blue-500 text-gray-600" placeholder="Search products...">
                 <button id="search-button" class="bg-blue-500 text-white p-2 rounded-r-md hover:bg-blue-600">Search</button>
             </div>
         </div>
@@ -41,145 +41,146 @@
         <section class="mb-8">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div class="bg-gray-200 p-4 rounded">
-                    <h2 class="text-xl font-bold">Mega Sale 50% Off</h2>
-                    <p>Shop the latest trends now!</p>
-                    <a href="category.html" class="text-blue-500 hover:underline">Shop Now</a>
+                    <h2 class="text-xl font-bold font-[Poppins]">Mega Sale 50% Off</h2>
+                    <p class="text-gray-600">Shop the latest trends now!</p>
+                    <a href="category.html" class="text-blue-600 hover:underline">Shop Now</a>
                 </div>
                 <div class="bg-gray-200 p-4 rounded">
-                    <h2 class="text-xl font-bold">New Arrivals</h2>
-                    <p>Explore fresh collections!</p>
-                    <a href="category.html" class="text-blue-500 hover:underline">Discover Now</a>
+                    <h2 class="text-xl font-bold font-[Poppins]">New Arrivals</h2>
+                    <p class="text-gray-600">Explore fresh collections!</p>
+                    <a href="category.html" class="text-blue-600 hover:underline">Discover Now</a>
                 </div>
                 <div class="bg-gray-200 p-4 rounded">
-                    <h2 class="text-xl font-bold">Free Shipping</h2>
-                    <p>On orders above ₹999</p>
-                    <a href="category.html" class="text-blue-500 hover:underline">Shop Now</a>
+                    <h2 class="text-xl font-bold font-[Poppins]">Free Shipping</h2>
+                    <p class="text-gray-600">On orders above ₹999</p>
+                    <a href="category.html" class="text-blue-600 hover:underline">Shop Now</a>
                 </div>
             </div>
         </section>
         <section class="mb-8">
-            <h2 class="text-2xl font-bold mb-4">Featured Products</h2>
+            <h2 class="text-2xl font-bold font-[Poppins] mb-4">Featured Products</h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
                 <div class="bg-white p-4 rounded shadow product-item" data-name="Stylish T-Shirt">
-                    <img src="images/tshirt.jpg" alt="Stylish T-Shirt" class="w-full h-40 object-cover mb-2">
-                    <h3 class="text-lg font-semibold">Stylish T-Shirt</h3>
-                    <p>₹999</p>
-                    <div class="flex items-center mb-2">
-                        <span>4.5</span>
-                        <span class="text-yellow-500">★★★★☆</span>
+                    <div class="relative w-full aspect-square bg-gray-200 rounded overflow-hidden">
+                        <img src="images/tshirt.jpg" alt="Stylish T-Shirt" class="w-full h-full object-contain">
                     </div>
-                    <a href="product.html" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Add to Cart</a>
+                    <h3 class="text-lg font-semibold font-[Poppins] mt-2">Stylish T-Shirt</h3>
+                    <p class="text-gray-600">₹999</p>
+                    <div class="flex items-center mb-2">
+                        <span class="text-yellow-400">★★★★☆</span>
+                    </div>
+                    <a href="product.html" class="bg-blue-600 text-white font-medium py-2 px-4 rounded-md hover:bg-blue-500 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Add to Cart</a>
                 </div>
                 <div class="bg-white p-4 rounded shadow product-item" data-name="Casual Sneakers">
-                    <img src="images/sneaker.jpg" alt="Casual Sneakers" class="w-full h-40 object-cover mb-2">
-                    <h3 class="text-lg font-semibold">Casual Sneakers</h3>
-                    <p>₹1999</p>
-                    <div class="flex items-center mb-2">
-                        <span>4.2</span>
-                        <span class="text-yellow-500">★★★★☆</span>
+                    <div class="relative w-full aspect-square bg-gray-200 rounded overflow-hidden">
+                        <img src="images/sneaker.jpg" alt="Casual Sneakers" class="w-full h-full object-contain">
                     </div>
-                    <a href="product.html" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Add to Cart</a>
+                    <h3 class="text-lg font-semibold font-[Poppins] mt-2">Casual Sneakers</h3>
+                    <p class="text-gray-600">₹1999</p>
+                    <div class="flex items-center mb-2">
+                        <span class="text-yellow-400">★★★★☆</span>
+                    </div>
+                    <a href="product.html" class="bg-blue-600 text-white font-medium py-2 px-4 rounded-md hover:bg-blue-500 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Add to Cart</a>
                 </div>
                 <div class="bg-white p-4 rounded shadow product-item" data-name="Leather Jacket">
-                    <img src="images/jacket.jpg" alt="Leather Jacket" class="w-full h-40 object-cover mb-2">
-                    <h3 class="text-lg font-semibold">Leather Jacket</h3>
-                    <p>₹2999</p>
-                    <div class="flex items-center mb-2">
-                        <span>4.7</span>
-                        <span class="text-yellow-500">★★★★☆</span>
+                    <div class="relative w-full aspect-square bg-gray-200 rounded overflow-hidden">
+                        <img src="images/jacket.jpg" alt="Leather Jacket" class="w-full h-full object-contain">
                     </div>
-                    <a href="product.html" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Add to Cart</a>
+                    <h3 class="text-lg font-semibold font-[Poppins] mt-2">Leather Jacket</h3>
+                    <p class="text-gray-600">₹2999</p>
+                    <div class="flex items-center mb-2">
+                        <span class="text-yellow-400">★★★★☆</span>
+                    </div>
+                    <a href="product.html" class="bg-blue-600 text-white font-medium py-2 px-4 rounded-md hover:bg-blue-500 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Add to Cart</a>
                 </div>
                 <div class="bg-white p-4 rounded shadow product-item" data-name="Sunglasses">
-                    <img src="images/sunglasses.jpg" alt="Sunglasses" class="w-full h-40 object-cover mb-2">
-                    <h3 class="text-lg font-semibold">Sunglasses</h3>
-                    <p>₹799</p>
-                    <div class="flex items-center mb-2">
-                        <span>4.0</span>
-                        <span class="text-yellow-500">★★★★☆</span>
+                    <div class="relative w-full aspect-square bg-gray-200 rounded overflow-hidden">
+                        <img src="images/sunglasses.jpg" alt="Sunglasses" class="w-full h-full object-contain">
                     </div>
-                    <a href="product.html" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Add to Cart</a>
+                    <h3 class="text-lg font-semibold font-[Poppins] mt-2">Sunglasses</h3>
+                    <p class="text-gray-600">₹799</p>
+                    <div class="flex items-center mb-2">
+                        <span class="text-yellow-400">★★★★☆</span>
+                    </div>
+                    <a href="product.html" class="bg-blue-600 text-white font-medium py-2 px-4 rounded-md hover:bg-blue-500 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Add to Cart</a>
                 </div>
             </div>
         </section>
         <section class="mb-8">
-            <h2 class="text-2xl font-bold mb-4">Top Categories</h2>
+            <h2 class="text-2xl font-bold font-[Poppins] mb-4">Top Categories</h2>
             <div class="flex space-x-4">
-                <a href="category.html" class="bg-gray-200 p-4 rounded hover:bg-gray-300">Men</a>
-                <a href="category.html" class="bg-gray-200 p-4 rounded hover:bg-gray-300">Women</a>
-                <a href="category.html" class="bg-gray-200 p-4 rounded hover:bg-gray-300">Kids</a>
-                <a href="category.html" class="bg-gray-200 p-4 rounded hover:bg-gray-300">Accessories</a>
+                <a href="category.html" class="bg-gray-200 p-4 rounded hover:bg-gray-300 text-gray-600 font-medium">Men</a>
+                <a href="category.html" class="bg-gray-200 p-4 rounded hover:bg-gray-300 text-gray-600 font-medium">Women</a>
+                <a href="category.html" class="bg-gray-200 p-4 rounded hover:bg-gray-300 text-gray-600 font-medium">Kids</a>
+                <a href="category.html" class="bg-gray-200 p-4 rounded hover:bg-gray-300 text-gray-600 font-medium">Accessories</a>
             </div>
         </section>
         <section class="mb-8">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div class="bg-gray-200 p-4 rounded">
-                    <h3 class="text-lg font-bold">50% Off on Men’s Wear</h3>
-                    <img src="images/tshirt.jpg" alt="Men's Wear Offer" class="w-full h-40 object-cover mt-2">
+                    <h3 class="text-lg font-bold font-[Poppins]">50% Off on Men’s Wear</h3>
+                    <img src="images/tshirt.jpg" alt="Men's Wear Offer" class="w-full h-32 object-cover mt-2 rounded">
                 </div>
                 <div class="bg-gray-200 p-4 rounded">
-                    <h3 class="text-lg font-bold">Buy 1 Get 1 Free</h3>
-                    <img src="images/sneaker.jpg" alt="B1G1 Offer" class="w-full h-40 object-cover mt-2">
+                    <h3 class="text-lg font-bold font-[Poppins]">Buy 1 Get 1 Free</h3>
+                    <img src="images/sneaker.jpg" alt="B1G1 Offer" class="w-full h-32 object-cover mt-2 rounded">
                 </div>
             </div>
         </section>
         <section>
-            <h2 class="text-2xl font-bold mb-4">What Our Customers Say</h2>
+            <h2 class="text-2xl font-bold font-[Poppins] mb-4">What Our Customers Say</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
                 <div class="bg-gray-100 p-4 rounded">
-                    <p>"Amazing quality and super fast delivery!"</p>
-                    <p class="font-semibold">Jane Doe</p>
+                    <p class="text-gray-600">"Amazing quality and super fast delivery!"</p>
+                    <p class="font-semibold text-gray-900">Jane Doe</p>
                     <div class="flex items-center">
-                        <span>4.8</span>
-                        <span class="text-yellow-500">★★★★☆</span>
+                        <span class="text-yellow-400">★★★★☆</span>
                     </div>
                 </div>
                 <div class="bg-gray-100 p-4 rounded">
-                    <p>"Love the variety and easy navigation."</p>
-                    <p class="font-semibold">John Smith</p>
+                    <p class="text-gray-600">"Love the variety and easy navigation."</p>
+                    <p class="font-semibold text-gray-900">John Smith</p>
                     <div class="flex items-center">
-                        <span>4.5</span>
-                        <span class="text-yellow-500">★★★★☆</span>
+                        <span class="text-yellow-400">★★★★☆</span>
                     </div>
                 </div>
                 <div class="bg-gray-100 p-4 rounded">
-                    <p>"Best deals on accessories!"</p>
-                    <p class="font-semibold">Emma Wilson</p>
+                    <p class="text-gray-600">"Best deals on accessories!"</p>
+                    <p class="font-semibold text-gray-900">Emma Wilson</p>
                     <div class="flex items-center">
-                        <span>4.6</span>
-                        <span class="text-yellow-500">★★★★☆</span>
+                        <span class="text-yellow-400">★★★★☆</span>
                     </div>
                 </div>
             </div>
         </section>
     </main>
-    <footer class="bg-gray-900 text-white py-8">
+    <footer class="bg-gray-800 text-white py-8">
         <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-4">
             <div>
-                <h3 class="text-lg font-bold">eShop</h3>
-                <p>Your one-stop shop for everything trendy.</p>
+                <h3 class="text-lg font-bold font-[Poppins]">eShop</h3>
+                <p class="text-gray-300">Your one-stop shop for everything trendy.</p>
             </div>
             <div>
-                <h3 class="text-lg font-bold">Links</h3>
+                <h3 class="text-lg font-bold font-[Poppins]">Links</h3>
                 <ul>
-                    <li><a href="index.html" class="hover:text-gray-300">Home</a></li>
-                    <li><a href="category.html" class="hover:text-gray-300">Categories</a></li>
-                    <li><a href="#" class="hover:text-gray-300">Contact</a></li>
+                    <li><a href="index.html" class="hover:text-blue-400">Home</a></li>
+                    <li><a href="category.html" class="hover:text-blue-400">Categories</a></li>
+                    <li><a href="#" class="hover:text-blue-400">Contact</a></li>
                 </ul>
             </div>
             <div>
-                <h3 class="text-lg font-bold">Policies</h3>
+                <h3 class="text-lg font-bold font-[Poppins]">Policies</h3>
                 <ul>
-                    <li><a href="#" class="hover:text-gray-300">Privacy Policy</a></li>
-                    <li><a href="#" class="hover:text-gray-300">Terms of Service</a></li>
+                    <li><a href="#" class="hover:text-blue-400">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-blue-400">Terms of Service</a></li>
                 </ul>
             </div>
             <div>
-                <h3 class="text-lg font-bold">Follow Us</h3>
+                <h3 class="text-lg font-bold font-[Poppins]">Follow Us</h3>
                 <div class="flex space-x-4">
-                    <a href="#"><img src="https://via.placeholder.com/24" alt="Facebook"></a>
-                    <a href="#"><img src="https://via.placeholder.com/24" alt="Twitter"></a>
-                    <a href="#"><img src="https://via.placeholder.com/24" alt="Instagram"></a>
+                    <a href="#"><i class="fab fa-facebook hover:text-blue-400"></i></a>
+                    <a href="#"><i class="fab fa-twitter hover:text-blue-400"></i></a>
+                    <a href="#"><i class="fab fa-instagram hover:text-blue-400"></i></a>
                 </div>
             </div>
         </div>
