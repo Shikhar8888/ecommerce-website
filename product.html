@@ -34,12 +34,22 @@
     <main class="container mx-auto px-4 py-8">
         <div class="grid md:grid-cols-2 gap-8">
             <div>
-                <img src="images/tshirt.jpg" alt="Product" class="w-full h-96 object-cover rounded main-image">
+                <div class="relative w-full aspect-[4/3] bg-gray-200 rounded overflow-hidden">
+                    <img src="images/tshirt.jpg" alt="Product" class="w-full h-full object-contain main-image">
+                </div>
                 <div class="flex mt-4 space-x-2">
-                    <img src="images/tshirt.jpg" alt="Thumbnail" class="w-20 h-20 object-cover rounded cursor-pointer thumbnail">
-                    <img src="images/jacket.jpg" alt="Thumbnail" class="w-20 h-20 object-cover rounded cursor-pointer thumbnail">
-                    <img src="images/sneaker.jpg" alt="Thumbnail" class="w-20 h-20 object-cover rounded cursor-pointer thumbnail">
-                    <img src="images/sunglasses.jpg" alt="Thumbnail" class="w-20 h-20 object-cover rounded cursor-pointer thumbnail">
+                    <div class="relative w-20 h-20 aspect-square bg-gray-200 rounded overflow-hidden">
+                        <img src="images/tshirt.jpg" alt="Thumbnail" class="w-full h-full object-contain thumbnail cursor-pointer">
+                    </div>
+                    <div class="relative w-20 h-20 aspect-square bg-gray-200 rounded overflow-hidden">
+                        <img src="images/jacket.jpg" alt="Thumbnail" class="w-full h-full object-contain thumbnail cursor-pointer">
+                    </div>
+                    <div class="relative w-20 h-20 aspect-square bg-gray-200 rounded overflow-hidden">
+                        <img src="images/sneaker.jpg" alt="Thumbnail" class="w-full h-full object-contain thumbnail cursor-pointer">
+                    </div>
+                    <div class="relative w-20 h-20 aspect-square bg-gray-200 rounded overflow-hidden">
+                        <img src="images/sunglasses.jpg" alt="Thumbnail" class="w-full h-full object-contain thumbnail cursor-pointer">
+                    </div>
                 </div>
             </div>
             <div>
