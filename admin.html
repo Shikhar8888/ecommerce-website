@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin - eShop</title>
+    <title>eShop Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
@@ -12,10 +12,7 @@
         <div class="container mx-auto p-4 flex justify-between items-center">
             <h1 class="text-2xl font-bold font-[Poppins] footer-business-name">eShop</h1>
             <nav class="hidden md:flex space-x-4">
-                <a href="index.html" class="text-gray-600 hover:text-blue-600">Home</a>
-                <a href="category.html" class="text-gray-600 hover:text-blue-600">Categories</a>
-                <a href="checkout.html" class="text-gray-600 hover:text-blue-600">Cart</a>
-                <a href="account.html" class="text-gray-600 hover:text-blue-600">Account</a>
+                <a href="index.html" class="text-gray-600 hover:text-blue-600">View Store</a>
                 <a href="admin.html" class="text-gray-600 hover:text-blue-600">Admin</a>
                 <a href="login.html" class="text-gray-600 hover:text-blue-600">Login</a>
             </nav>
@@ -26,92 +23,122 @@
             </button>
         </div>
         <nav id="mobile-menu" class="hidden md:hidden bg-white shadow">
-            <a href="index.html" class="block p-4 text-gray-600 hover:text-blue-600">Home</a>
-            <a href="category.html" class="block p-4 text-gray-600 hover:text-blue-600">Categories</a>
-            <a href="checkout.html" class="block p-4 text-gray-600 hover:text-blue-600">Cart</a>
-            <a href="account.html" class="block p-4 text-gray-600 hover:text-blue-600">Account</a>
+            <a href="index.html" class="block p-4 text-gray-600 hover:text-blue-600">View Store</a>
             <a href="admin.html" class="block p-4 text-gray-600 hover:text-blue-600">Admin</a>
             <a href="login.html" class="block p-4 text-gray-600 hover:text-blue-600">Login</a>
         </nav>
     </header>
     <main class="container mx-auto p-4">
-        <h2 class="text-2xl font-bold mb-4">Admin Panel</h2>
-        <div class="bg-white p-4 rounded shadow mb-4">
-            <h3 class="text-lg font-bold">Add Product</h3>
-            <form id="add-product-form" class="space-y-4">
-                <div>
-                    <label for="product-name" class="block">Name</label>
-                    <input type="text" id="product-name" class="border p-2 rounded w-full" required>
-                </div>
-                <div>
-                    <label for="product-price" class="block">Price</label>
-                    <input type="number" id="product-price" class="border p-2 rounded w-full" required>
-                </div>
-                <div>
-                    <label for="product-image" class="block">Image URL</label>
-                    <input type="text" id="product-image" class="border p-2 rounded w-full" placeholder="https://via.placeholder.com/150">
-                </div>
-                <div>
-                    <label for="product-description" class="block">Description</label>
-                    <textarea id="product-description" class="border p-2 rounded w-full"></textarea>
-                </div>
-                <div>
-                    <label for="product-category" class="block">Category</label>
-                    <input type="text" id="product-category" class="border p-2 rounded w-full">
-                </div>
-                <div>
-                    <label for="product-rating" class="block">Rating (1-5)</label>
-                    <input type="number" id="product-rating" class="border p-2 rounded w-full" min="1" max="5">
-                </div>
-                <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded">Add Product</button>
-            </form>
+        <h2 class="text-2xl font-bold mb-4">Dashboard</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-4">
+            <div class="bg-white p-4 rounded shadow">
+                <h3 class="text-lg font-bold">Total Products</h3>
+                <p id="total-products" class="text-2xl">0</p>
+            </div>
+            <div class="bg-white p-4 rounded shadow">
+                <h3 class="text-lg font-bold">Categories</h3>
+                <p id="total-categories" class="text-2xl">0</p>
+            </div>
+            <div class="bg-white p-4 rounded shadow">
+                <h3 class="text-lg font-bold">Total Orders</h3>
+                <p id="total-orders" class="text-2xl">0</p>
+            </div>
+            <div class="bg-white p-4 rounded shadow">
+                <h3 class="text-lg font-bold">Total Revenue</h3>
+                <p id="total-revenue" class="text-2xl">$0</p>
+            </div>
         </div>
-        <div class="bg-white p-4 rounded shadow mb-4">
-            <h3 class="text-lg font-bold">Update Business Info</h3>
-            <form id="business-info-form" class="space-y-4">
-                <div>
-                    <label for="business-logo" class="block">Logo URL</label>
-                    <input type="text" id="business-logo" class="border p-2 rounded w-full" placeholder="https://via.placeholder.com/150">
-                </div>
-                <div>
-                    <label for="business-name" class="block">Business Name</label>
-                    <input type="text" id="business-name" class="border p-2 rounded w-full">
-                </div>
-                <div>
-                    <label for="business-email" class="block">Contact Email</label>
-                    <input type="email" id="business-email" class="border p-2 rounded w-full">
-                </div>
-                <div>
-                    <label for="business-phone" class="block">Contact Phone</label>
-                    <input type="text" id="business-phone" class="border p-2 rounded w-full">
-                </div>
-                <div>
-                    <label for="business-address" class="block">Address</label>
-                    <textarea id="business-address" class="border p-2 rounded w-full"></textarea>
-                </div>
-                <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded">Update Info</button>
-            </form>
+        <div class="tabs mb-4">
+            <button class="tab active" data-tab="dashboard">Dashboard</button>
+            <button class="tab" data-tab="products">Products</button>
+            <button class="tab" data-tab="categories">Categories</button>
+            <button class="tab" data-tab="orders">Orders</button>
+            <button class="tab" data-tab="settings">Settings</button>
         </div>
-        <div class="bg-white p-4 rounded shadow">
-            <h3 class="text-lg font-bold">Order Management</h3>
+        <div id="dashboard-tab" class="tab-content active">
+            <h3 class="text-lg font-bold">Recent Orders</h3>
+            <p id="recent-orders">Loading...</p>
+        </div>
+        <div id="products-tab" class="tab-content">
+            <h3 class="text-lg font-bold">Products</h3>
+            <button id="add-product-btn" class="bg-blue-600 text-white py-2 px-4 rounded mb-2">Add Product</button>
+            <table class="w-full border-collapse">
+                <thead>
+                    <tr class="bg-gray-200">
+                        <th class="p-2">Name</th>
+                        <th class="p-2">Brand</th>
+                        <th class="p-2">Price</th>
+                        <th class="p-2">Stock</th>
+                        <th class="p-2">Category</th>
+                        <th class="p-2">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="product-table-body"></tbody>
+            </table>
+        </div>
+        <div id="categories-tab" class="tab-content">
+            <h3 class="text-lg font-bold">Categories</h3>
+            <button id="add-category-btn" class="bg-blue-600 text-white py-2 px-4 rounded mb-2">Add Category</button>
+            <table class="w-full border-collapse">
+                <thead>
+                    <tr class="bg-gray-200">
+                        <th class="p-2">Name</th>
+                        <th class="p-2">Description</th>
+                        <th class="p-2">Products Count</th>
+                        <th class="p-2">Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="category-table-body"></tbody>
+            </table>
+        </div>
+        <div id="orders-tab" class="tab-content">
+            <h3 class="text-lg font-bold">Orders</h3>
             <table class="w-full border-collapse">
                 <thead>
                     <tr class="bg-gray-200">
                         <th class="p-2">Order ID</th>
-                        <th class="p-2">User ID</th>
+                        <th class="p-2">Customer</th>
                         <th class="p-2">Total</th>
                         <th class="p-2">Status</th>
+                        <th class="p-2">Date</th>
+                        <th class="p-2">Actions</th>
                     </tr>
                 </thead>
                 <tbody id="order-table-body"></tbody>
             </table>
+        </div>
+        <div id="settings-tab" class="tab-content">
+            <h3 class="text-lg font-bold">Business Settings</h3>
+            <form id="business-info-form" class="space-y-4">
+                <div>
+                    <label for="business-name" class="block">Business Name</label>
+                    <input type="text" id="business-name" class="border p-2 rounded w-full" value="eShop">
+                </div>
+                <div>
+                    <label for="business-email" class="block">Business Email</label>
+                    <input type="email" id="business-email" class="border p-2 rounded w-full" value="">
+                </div>
+                <div>
+                    <label for="business-phone" class="block">Business Phone</label>
+                    <input type="text" id="business-phone" class="border p-2 rounded w-full" value="">
+                </div>
+                <div>
+                    <label for="business-address" class="block">Business Address</label>
+                    <textarea id="business-address" class="border p-2 rounded w-full">123 Business St, Suite 100\nCity, State 12345</textarea>
+                </div>
+                <div>
+                    <label for="business-logo" class="block">Logo URL</label>
+                    <input type="text" id="business-logo" class="border p-2 rounded w-full" value="/images/logo.jpg">
+                </div>
+                <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded">Save Settings</button>
+            </form>
         </div>
     </main>
     <footer class="bg-gray-800 text-white py-8">
         <div class="container mx-auto p-4">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
-                    <img src="https://via.placeholder.com/150" alt="eShop Logo" class="footer-logo w-32 mb-4">
+                    <img src="/images/logo.jpg" alt="eShop Logo" class="footer-logo w-32 mb-4">
                     <p class="footer-business-name">eShop</p>
                     <p class="footer-contact-email"></p>
                     <p class="footer-contact-phone"></p>
@@ -120,9 +147,8 @@
                 <div>
                     <h3 class="text-lg font-bold">Links</h3>
                     <ul>
-                        <li><a href="index.html" class="hover:text-blue-400">Home</a></li>
-                        <li><a href="category.html" class="hover:text-blue-400">Categories</a></li>
-                        <li><a href="account.html" class="hover:text-blue-400">Account</a></li>
+                        <li><a href="index.html" class="hover:text-blue-400">View Store</a></li>
+                        <li><a href="admin.html" class="hover:text-blue-400">Admin</a></li>
                     </ul>
                 </div>
                 <div>
@@ -136,6 +162,82 @@
             </div>
         </div>
     </footer>
+    <div id="add-product-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden">
+        <div class="bg-white p-4 rounded shadow max-w-md mx-auto mt-20">
+            <h3 class="text-lg font-bold mb-4">Add/Edit Product</h3>
+            <button id="close-product-modal" class="float-right text-2xl">&times;</button>
+            <form id="add-product-form" class="space-y-4">
+                <div>
+                    <label for="product-name" class="block">Name</label>
+                    <input type="text" id="product-name" class="border p-2 rounded w-full" required>
+                </div>
+                <div>
+                    <label for="product-brand" class="block">Brand</label>
+                    <input type="text" id="product-brand" class="border p-2 rounded w-full" required>
+                </div>
+                <div>
+                    <label for="product-description" class="block">Description</label>
+                    <textarea id="product-description" class="border p-2 rounded w-full"></textarea>
+                </div>
+                <div>
+                    <label for="product-price" class="block">Price</label>
+                    <input type="number" id="product-price" class="border p-2 rounded w-full" required>
+                </div>
+                <div>
+                    <label for="product-discount-price" class="block">Discount Price</label>
+                    <input type="number" id="product-discount-price" class="border p-2 rounded w-full">
+                </div>
+                <div>
+                    <label for="product-stock" class="block">Stock Quantity</label>
+                    <input type="number" id="product-stock" class="border p-2 rounded w-full" required>
+                </div>
+                <div>
+                    <label for="product-category" class="block">Category</label>
+                    <select id="product-category" class="border p-2 rounded w-full">
+                        <option value="">Select category</option>
+                        <option value="Men">Men</option>
+                        <option value="Women">Women</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="product-image" class="block">Image URL</label>
+                    <input type="text" id="product-image" class="border p-2 rounded w-full" value="/images/tshirt.jpg">
+                </div>
+                <div class="flex space-x-4">
+                    <label><input type="checkbox" id="product-featured"> Featured Product</label>
+                    <label><input type="checkbox" id="product-bestseller"> Bestseller</label>
+                </div>
+                <div class="flex justify-end space-x-4">
+                    <button type="button" id="cancel-product" class="bg-gray-500 text-white py-2 px-4 rounded">Cancel</button>
+                    <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded">Save Product</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="add-category-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden">
+        <div class="bg-white p-4 rounded shadow max-w-md mx-auto mt-20">
+            <h3 class="text-lg font-bold mb-4">Add/Edit Category</h3>
+            <button id="close-category-modal" class="float-right text-2xl">&times;</button>
+            <form id="add-category-form" class="space-y-4">
+                <div>
+                    <label for="category-name" class="block">Name</label>
+                    <input type="text" id="category-name" class="border p-2 rounded w-full" required>
+                </div>
+                <div>
+                    <label for="category-description" class="block">Description</label>
+                    <textarea id="category-description" class="border p-2 rounded w-full"></textarea>
+                </div>
+                <div>
+                    <label for="category-image" class="block">Image URL</label>
+                    <input type="text" id="category-image" class="border p-2 rounded w-full" value="/images/jacket.jpg">
+                </div>
+                <div class="flex justify-end space-x-4">
+                    <button type="button" id="cancel-category" class="bg-gray-500 text-white py-2 px-4 rounded">Cancel</button>
+                    <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded">Save Category</button>
+                </div>
+            </form>
+        </div>
+    </div>
     <script src="script.js" type="module"></script>
 </body>
 </html>
