@@ -4,66 +4,241 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>eShop</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Custom CSS -->
     <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts - Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .font-[Poppins] {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
 </head>
-<body class="bg-gray-100">
-    <header class="bg-white shadow">
-        <div class="container mx-auto p-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold font-[Poppins] footer-business-name">eShop</h1>
-            <nav class="hidden md:flex space-x-4">
-                <a href="index.html" class="text-gray-600 hover:text-blue-600">View Store</a>
-                <a href="admin.html" class="text-gray-600 hover:text-blue-600">Admin</a>
-                <a href="login.html" class="text-gray-600 hover:text-blue-600">Login</a>
-            </nav>
-            <button id="hamburger" class="md:hidden">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-            </button>
-        </div>
-        <nav id="mobile-menu" class="hidden md:hidden bg-white shadow">
-            <a href="index.html" class="block p-4 text-gray-600 hover:text-blue-600">View Store</a>
-            <a href="admin.html" class="block p-4 text-gray-600 hover:text-blue-600">Admin</a>
-            <a href="login.html" class="block p-4 text-gray-600 hover:text-blue-600">Login</a>
+<body class="font-sans text-gray-900">
+    <header class="bg-gray-800 text-white">
+        <nav class="container mx-auto flex justify-between items-center p-4">
+            <a href="index.html" class="text-2xl font-bold font-[Poppins]">eShop</a>
+            <div class="hidden md:flex space-x-4 text-base font-medium">
+                <a href="index.html" class="hover:text-gray-300">Home</a>
+                <a href="category.html" class="hover:text-gray-300">Categories</a>
+                <a href="offers.html" class="hover:text-gray-300">Offers</a>
+                <a href="account.html" class="hover:text-gray-300">Account</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="#search" class="hover:text-gray-300"><i class="fas fa-search"></i></a>
+                <a href="cart.html" class="hover:text-gray-300"><i class="fas fa-shopping-cart"></i></a>
+                <button id="hamburger" class="md:hidden"><i class="fas fa-bars"></i></button>
+            </div>
         </nav>
+        <div id="mobile-menu" class="hidden bg-gray-800 text-white">
+            <a href="index.html" class="block p-4 hover:bg-gray-700">Home</a>
+            <a href="category.html" class="block p-4 hover:bg-gray-700">Categories</a>
+            <a href="offers.html" class="block p-4 hover:bg-gray-700">Offers</a>
+            <a href="account.html" class="block p-4 hover:bg-gray-700">Account</a>
+        </div>
+        <div class="container mx-auto p-4">
+            <div class="flex items-center space-x-2">
+                <input type="text" id="search-bar" class="w-full p-2 rounded-l-md border-none focus:ring-2 focus:ring-blue-500 text-gray-600" placeholder="Search products...">
+                <button id="search-button" class="bg-blue-500 text-white p-2 rounded-r-md hover:bg-blue-600">Search</button>
+            </div>
+        </div>
     </header>
     <main class="container mx-auto p-4">
-        <h2 class="text-2xl font-bold mb-4">eShop</h2>
-        <div class="mb-4">
-            <input type="text" id="search-bar" class="border p-2 rounded w-full md:w-1/3" placeholder="Search products...">
-            <button id="search-button" class="bg-blue-600 text-white py-2 px-4 rounded mt-2">Search</button>
-        </div>
-        <div class="product-list grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"></div>
+        <section class="mb-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-gray-200 p-4 rounded">
+                    <h2 class="text-xl font-bold font-[Poppins]">Mega Sale 50% Off</h2>
+                    <p class="text-gray-600">Shop the latest trends now!</p>
+                    <a href="category.html" class="text-blue-600 hover:underline">Shop Now</a>
+                </div>
+                <div class="bg-gray-200 p-4 rounded">
+                    <h2 class="text-xl font-bold font-[Poppins]">New Arrivals</h2>
+                    <p class="text-gray-600">Explore fresh collections!</p>
+                    <a href="category.html" class="text-blue-600 hover:underline">Discover Now</a>
+                </div>
+                <div class="bg-gray-200 p-4 rounded">
+                    <h2 class="text-xl font-bold font-[Poppins]">Free Shipping</h2>
+                    <p class="text-gray-600">On orders above ₹999</p>
+                    <a href="category.html" class="text-blue-600 hover:underline">Shop Now</a>
+                </div>
+            </div>
+        </section>
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold font-[Poppins] mb-4">Featured Products</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-white p-4 rounded shadow product-item" data-name="Stylish T-Shirt">
+                    <div class="relative w-full aspect-square bg-gray-200 rounded overflow-hidden">
+                        <img src="images/tshirt.jpg" alt="Stylish T-Shirt" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="text-lg font-semibold font-[Poppins] mt-2">Stylish T-Shirt</h3>
+                    <p class="text-gray-600">₹999</p>
+                    <div class="flex items-center mb-2">
+                        <span class="text-yellow-400">★★★★☆</span>
+                    </div>
+                    <a href="product.html?id=1" class="block bg-blue-600 text-white text-center font-medium py-2 px-4 rounded-md hover:bg-blue-500 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Add to Cart</a>
+                </div>
+                <div class="bg-white p-4 rounded shadow product-item" data-name="Casual Sneakers">
+                    <div class="relative w-full aspect-square bg-gray-200 rounded overflow-hidden">
+                        <img src="images/sneaker.jpg" alt="Casual Sneakers" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="text-lg font-semibold font-[Poppins] mt-2">Casual Sneakers</h3>
+                    <p class="text-gray-600">₹1999</p>
+                    <div class="flex items-center mb-2">
+                        <span class="text-yellow-400">★★★★☆</span>
+                    </div>
+                    <a href="product.html?id=2" class="block bg-blue-600 text-white text-center font-medium py-2 px-4 rounded-md hover:bg-blue-500 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Add to Cart</a>
+                </div>
+                <div class="bg-white p-4 rounded shadow product-item" data-name="Leather Jacket">
+                    <div class="relative w-full aspect-square bg-gray-200 rounded overflow-hidden">
+                        <img src="images/jacket.jpg" alt="Leather Jacket" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="text-lg font-semibold font-[Poppins] mt-2">Leather Jacket</h3>
+                    <p class="text-gray-600">₹2999</p>
+                    <div class="flex items-center mb-2">
+                        <span class="text-yellow-400">★★★★☆</span>
+                    </div>
+                    <a href="product.html?id=3" class="block bg-blue-600 text-white text-center font-medium py-2 px-4 rounded-md hover:bg-blue-500 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Add to Cart</a>
+                </div>
+                <div class="bg-white p-4 rounded shadow product-item" data-name="Sunglasses">
+                    <div class="relative w-full aspect-square bg-gray-200 rounded overflow-hidden">
+                        <img src="images/sunglasses.jpg" alt="Sunglasses" class="w-full h-full object-contain">
+                    </div>
+                    <h3 class="text-lg font-semibold font-[Poppins] mt-2">Sunglasses</h3>
+                    <p class="text-gray-600">₹799</p>
+                    <div class="flex items-center mb-2">
+                        <span class="text-yellow-400">★★★★☆</span>
+                    </div>
+                    <a href="product.html?id=4" class="block bg-blue-600 text-white text-center font-medium py-2 px-4 rounded-md hover:bg-blue-500 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Add to Cart</a>
+                </div>
+            </div>
+        </section>
+        <section class="mb-8">
+            <h2 class="text-2xl font-bold font-[Poppins] mb-4">Top Categories</h2>
+            <div class="flex space-x-4 overflow-x-auto pb-2">
+                <a href="category.html?category=men" class="bg-gray-200 p-4 rounded hover:bg-gray-300 text-gray-600 font-medium whitespace-nowrap">Men</a>
+                <a href="category.html?category=women" class="bg-gray-200 p-4 rounded hover:bg-gray-300 text-gray-600 font-medium whitespace-nowrap">Women</a>
+                <a href="category.html?category=kids" class="bg-gray-200 p-4 rounded hover:bg-gray-300 text-gray-600 font-medium whitespace-nowrap">Kids</a>
+                <a href="category.html?category=accessories" class="bg-gray-200 p-4 rounded hover:bg-gray-300 text-gray-600 font-medium whitespace-nowrap">Accessories</a>
+            </div>
+        </section>
+        <section class="mb-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="bg-gray-200 p-4 rounded">
+                    <h3 class="text-lg font-bold font-[Poppins]">50% Off on Men's Wear</h3>
+                    <a href="category.html?category=men">
+                        <img src="images/tshirt.jpg" alt="Men's Wear Offer" class="w-full h-32 object-cover mt-2 rounded hover:opacity-90">
+                    </a>
+                </div>
+                <div class="bg-gray-200 p-4 rounded">
+                    <h3 class="text-lg font-bold font-[Poppins]">Buy 1 Get 1 Free</h3>
+                    <a href="category.html?category=women">
+                        <img src="images/sneaker.jpg" alt="B1G1 Offer" class="w-full h-32 object-cover mt-2 rounded hover:opacity-90">
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2 class="text-2xl font-bold font-[Poppins] mb-4">What Our Customers Say</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div class="bg-gray-100 p-4 rounded">
+                    <p class="text-gray-600">"Amazing quality and super fast delivery!"</p>
+                    <p class="font-semibold text-gray-900">Jane Doe</p>
+                    <div class="flex items-center">
+                        <span class="text-yellow-400">★★★★☆</span>
+                    </div>
+                </div>
+                <div class="bg-gray-100 p-4 rounded">
+                    <p class="text-gray-600">"Love the variety and easy navigation."</p>
+                    <p class="font-semibold text-gray-900">John Smith</p>
+                    <div class="flex items-center">
+                        <span class="text-yellow-400">★★★★☆</span>
+                    </div>
+                </div>
+                <div class="bg-gray-100 p-4 rounded">
+                    <p class="text-gray-600">"Best deals on accessories!"</p>
+                    <p class="font-semibold text-gray-900">Emma Wilson</p>
+                    <div class="flex items-center">
+                        <span class="text-yellow-400">★★★★☆</span>
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
     <footer class="bg-gray-800 text-white py-8">
-        <div class="container mx-auto p-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div>
-                    <img src="/images/logo.jpg" alt="eShop Logo" class="footer-logo w-32 mb-4">
-                    <p class="footer-business-name">eShop</p>
-                    <p class="footer-contact-email"></p>
-                    <p class="footer-contact-phone"></p>
-                    <p class="footer-address"></p>
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
+            <div>
+                <h3 class="text-lg font-bold font-[Poppins] mb-2">eShop</h3>
+                <p class="text-gray-300">Your one-stop shop for everything trendy.</p>
+                <p class="text-gray-300 mt-2">© 2023 eShop. All rights reserved.</p>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold font-[Poppins] mb-2">Links</h3>
+                <ul class="space-y-2">
+                    <li><a href="index.html" class="hover:text-blue-400">Home</a></li>
+                    <li><a href="category.html" class="hover:text-blue-400">Categories</a></li>
+                    <li><a href="offers.html" class="hover:text-blue-400">Offers</a></li>
+                    <li><a href="contact.html" class="hover:text-blue-400">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold font-[Poppins] mb-2">Policies</h3>
+                <ul class="space-y-2">
+                    <li><a href="privacy.html" class="hover:text-blue-400">Privacy Policy</a></li>
+                    <li><a href="terms.html" class="hover:text-blue-400">Terms of Service</a></li>
+                    <li><a href="return.html" class="hover:text-blue-400">Return Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold font-[Poppins] mb-2">Follow Us</h3>
+                <div class="flex space-x-4">
+                    <a href="https://facebook.com" target="_blank" class="text-xl hover:text-blue-400"><i class="fab fa-facebook"></i></a>
+                    <a href="https://twitter.com" target="_blank" class="text-xl hover:text-blue-400"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com" target="_blank" class="text-xl hover:text-blue-400"><i class="fab fa-instagram"></i></a>
                 </div>
-                <div>
-                    <h3 class="text-lg font-bold">Links</h3>
-                    <ul>
-                        <li><a href="index.html" class="hover:text-blue-400">View Store</a></li>
-                        <li><a href="admin.html" class="hover:text-blue-400">Admin</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-bold">Follow Us</h3>
-                    <div class="flex space-x-4">
-                        <a href="#"><img src="https://via.placeholder.com/24" alt="Facebook" class="w-6 h-6"></a>
-                        <a href="#"><img src="https://via.placeholder.com/24" alt="Twitter" class="w-6 h-6"></a>
-                        <a href="#"><img src="https://via.placeholder.com/24" alt="Instagram" class="w-6 h-6"></a>
-                    </div>
+                <div class="mt-4">
+                    <h4 class="font-medium mb-2">Subscribe to our newsletter</h4>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="p-2 rounded-l text-gray-800 w-full">
+                        <button type="submit" class="bg-blue-600 px-4 rounded-r hover:bg-blue-500">Subscribe</button>
+                    </form>
                 </div>
             </div>
         </div>
     </footer>
-    <script src="script.js" type="module"></script>
+    <script src="script.js"></script>
+    <script>
+        // Mobile menu toggle
+        document.getElementById('hamburger').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Search functionality
+        document.getElementById('search-button').addEventListener('click', function() {
+            const searchTerm = document.getElementById('search-bar').value;
+            if(searchTerm.trim()) {
+                window.location.href = `category.html?search=${encodeURIComponent(searchTerm)}`;
+            }
+        });
+
+        // Product search filtering
+        document.getElementById('search-bar').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const products = document.querySelectorAll('.product-item');
+            
+            products.forEach(product => {
+                const productName = product.getAttribute('data-name').toLowerCase();
+                if(productName.includes(searchTerm)) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
