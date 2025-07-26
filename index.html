@@ -6,8 +6,6 @@
     <title>eShop</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css">
     <!-- Font Awesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts - Poppins -->
@@ -16,221 +14,163 @@
         .font-[Poppins] {
             font-family: 'Poppins', sans-serif;
         }
+        #login-modal {
+            display: none;
+        }
     </style>
 </head>
 <body class="font-sans text-gray-900">
+    <!-- Header -->
     <header class="bg-gray-800 text-white">
         <nav class="container mx-auto flex justify-between items-center p-4">
             <a href="index.html" class="text-2xl font-bold font-[Poppins]">eShop</a>
             <div class="hidden md:flex space-x-4 text-base font-medium">
                 <a href="index.html" class="hover:text-gray-300">Home</a>
                 <a href="category.html" class="hover:text-gray-300">Categories</a>
-                <a href="admin.html" class="hover:text-gray-300">Admin</a>
                 <a href="account.html" class="hover:text-gray-300">Account</a>
             </div>
             <div class="flex items-center space-x-4">
-                <a href="#search" class="hover:text-gray-300"><i class="fas fa-search"></i></a>
                 <a href="cart.html" class="hover:text-gray-300"><i class="fas fa-shopping-cart"></i></a>
+                <button id="login-btn" class="hover:text-gray-300"><i class="fas fa-user"></i></button>
                 <button id="hamburger" class="md:hidden"><i class="fas fa-bars"></i></button>
             </div>
         </nav>
-        <div id="mobile-menu" class="hidden bg-gray-800 text-white">
-            <a href="index.html" class="block p-4 hover:bg-gray-700">Home</a>
-            <a href="category.html" class="block p-4 hover:bg-gray-700">Categories</a>
-            <a href="admin.html" class="block p-4 hover:bg-gray-700">Admin</a>
-            <a href="account.html" class="block p-4 hover:bg-gray-700">Account</a>
-        </div>
-        <div class="container mx-auto p-4">
-            <div class="flex items-center space-x-2">
-                <input type="text" id="search-bar" class="w-full p-2 rounded-l-md border-none focus:ring-2 focus:ring-blue-500 text-gray-600" placeholder="Search products...">
-                <button id="search-button" class="bg-blue-500 text-white p-2 rounded-r-md hover:bg-blue-600">Search</button>
-            </div>
-        </div>
     </header>
+
+    <!-- Main Content -->
     <main class="container mx-auto p-4">
-        <section class="mb-8">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div class="bg-gray-200 p-4 rounded">
-                    <h2 class="text-xl font-bold font-[Poppins]">Mega Sale 50% Off</h2>
-                    <p class="text-gray-600">Shop the latest trends now!</p>
-                    <a href="category.html" class="text-blue-600 hover:underline">Shop Now</a>
-                </div>
-                <div class="bg-gray-200 p-4 rounded">
-                    <h2 class="text-xl font-bold font-[Poppins]">New Arrivals</h2>
-                    <p class="text-gray-600">Explore fresh collections!</p>
-                    <a href="category.html" class="text-blue-600 hover:underline">Discover Now</a>
-                </div>
-                <div class="bg-gray-200 p-4 rounded">
-                    <h2 class="text-xl font-bold font-[Poppins]">Free Shipping</h2>
-                    <p class="text-gray-600">On orders above ₹999</p>
-                    <a href="category.html" class="text-blue-600 hover:underline">Shop Now</a>
-                </div>
-            </div>
-        </section>
-        <section class="mb-8">
-            <h2 class="text-2xl font-bold font-[Poppins] mb-4">Featured Products</h2>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="bg-white p-4 rounded shadow product-item" data-name="Stylish T-Shirt">
-                    <div class="relative w-full aspect-square bg-gray-200 rounded overflow-hidden">
-                        <img src="images/tshirt.jpg" alt="Stylish T-Shirt" class="w-full h-full object-contain">
-                    </div>
-                    <h3 class="text-lg font-semibold font-[Poppins] mt-2">Stylish T-Shirt</h3>
-                    <p class="text-gray-600">₹999</p>
-                    <div class="flex items-center mb-2">
-                        <span class="text-yellow-400">★★★★☆</span>
-                    </div>
-                    <a href="product.html?id=1" class="block bg-blue-600 text-white text-center font-medium py-2 px-4 rounded-md hover:bg-blue-500 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Add to Cart</a>
-                </div>
-                <div class="bg-white p-4 rounded shadow product-item" data-name="Casual Sneakers">
-                    <div class="relative w-full aspect-square bg-gray-200 rounded overflow-hidden">
-                        <img src="images/sneaker.jpg" alt="Casual Sneakers" class="w-full h-full object-contain">
-                    </div>
-                    <h3 class="text-lg font-semibold font-[Poppins] mt-2">Casual Sneakers</h3>
-                    <p class="text-gray-600">₹1999</p>
-                    <div class="flex items-center mb-2">
-                        <span class="text-yellow-400">★★★★☆</span>
-                    </div>
-                    <a href="product.html?id=2" class="block bg-blue-600 text-white text-center font-medium py-2 px-4 rounded-md hover:bg-blue-500 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Add to Cart</a>
-                </div>
-                <div class="bg-white p-4 rounded shadow product-item" data-name="Leather Jacket">
-                    <div class="relative w-full aspect-square bg-gray-200 rounded overflow-hidden">
-                        <img src="images/jacket.jpg" alt="Leather Jacket" class="w-full h-full object-contain">
-                    </div>
-                    <h3 class="text-lg font-semibold font-[Poppins] mt-2">Leather Jacket</h3>
-                    <p class="text-gray-600">₹2999</p>
-                    <div class="flex items-center mb-2">
-                        <span class="text-yellow-400">★★★★☆</span>
-                    </div>
-                    <a href="product.html?id=3" class="block bg-blue-600 text-white text-center font-medium py-2 px-4 rounded-md hover:bg-blue-500 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Add to Cart</a>
-                </div>
-                <div class="bg-white p-4 rounded shadow product-item" data-name="Sunglasses">
-                    <div class="relative w-full aspect-square bg-gray-200 rounded overflow-hidden">
-                        <img src="images/sunglasses.jpg" alt="Sunglasses" class="w-full h-full object-contain">
-                    </div>
-                    <h3 class="text-lg font-semibold font-[Poppins] mt-2">Sunglasses</h3>
-                    <p class="text-gray-600">₹799</p>
-                    <div class="flex items-center mb-2">
-                        <span class="text-yellow-400">★★★★☆</span>
-                    </div>
-                    <a href="product.html?id=4" class="block bg-blue-600 text-white text-center font-medium py-2 px-4 rounded-md hover:bg-blue-500 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">Add to Cart</a>
-                </div>
-            </div>
-        </section>
-        <section class="mb-8">
-            <h2 class="text-2xl font-bold font-[Poppins] mb-4">Top Categories</h2>
-            <div class="flex space-x-4 overflow-x-auto pb-2">
-                <a href="category.html?category=men" class="bg-gray-200 p-4 rounded hover:bg-gray-300 text-gray-600 font-medium whitespace-nowrap">Men</a>
-                <a href="category.html?category=women" class="bg-gray-200 p-4 rounded hover:bg-gray-300 text-gray-600 font-medium whitespace-nowrap">Women</a>
-                <a href="category.html?category=kids" class="bg-gray-200 p-4 rounded hover:bg-gray-300 text-gray-600 font-medium whitespace-nowrap">Kids</a>
-                <a href="category.html?category=accessories" class="bg-gray-200 p-4 rounded hover:bg-gray-300 text-gray-600 font-medium whitespace-nowrap">Accessories</a>
-            </div>
-        </section>
-        <section class="mb-8">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div class="bg-gray-200 p-4 rounded">
-                    <h3 class="text-lg font-bold font-[Poppins]">50% Off on Men's Wear</h3>
-                    <a href="category.html?category=men">
-                        <img src="images/tshirt.jpg" alt="Men's Wear Offer" class="w-full h-32 object-cover mt-2 rounded hover:opacity-90">
-                    </a>
-                </div>
-                <div class="bg-gray-200 p-4 rounded">
-                    <h3 class="text-lg font-bold font-[Poppins]">Buy 1 Get 1 Free</h3>
-                    <a href="category.html?category=women">
-                        <img src="images/sneaker.jpg" alt="B1G1 Offer" class="w-full h-32 object-cover mt-2 rounded hover:opacity-90">
-                    </a>
-                </div>
-            </div>
-        </section>
-        <section>
-            <h2 class="text-2xl font-bold font-[Poppins] mb-4">What Our Customers Say</h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div class="bg-gray-100 p-4 rounded">
-                    <p class="text-gray-600">"Amazing quality and super fast delivery!"</p>
-                    <p class="font-semibold text-gray-900">Jane Doe</p>
-                    <div class="flex items-center">
-                        <span class="text-yellow-400">★★★★☆</span>
-                    </div>
-                </div>
-                <div class="bg-gray-100 p-4 rounded">
-                    <p class="text-gray-600">"Love the variety and easy navigation."</p>
-                    <p class="font-semibold text-gray-900">John Smith</p>
-                    <div class="flex items-center">
-                        <span class="text-yellow-400">★★★★☆</span>
-                    </div>
-                </div>
-                <div class="bg-gray-100 p-4 rounded">
-                    <p class="text-gray-600">"Best deals on accessories!"</p>
-                    <p class="font-semibold text-gray-900">Emma Wilson</p>
-                    <div class="flex items-center">
-                        <span class="text-yellow-400">★★★★☆</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- Your existing content here -->
+        <h1 class="text-3xl font-bold my-8">Welcome to eShop</h1>
+        <p>Please login or register to continue shopping.</p>
     </main>
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-                <h3 class="text-lg font-bold font-[Poppins] mb-2">eShop</h3>
-                <p class="text-gray-300">Your one-stop shop for everything trendy.</p>
-                <p class="text-gray-300 mt-2">© 2023 eShop. All rights reserved.</p>
+
+    <!-- Login/Register Modal -->
+    <div id="login-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-white p-8 rounded-lg max-w-md w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-2xl font-bold font-[Poppins]">Welcome to eShop</h2>
+                <button id="close-modal" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times"></i>
+                </button>
             </div>
-            <div>
-                <h3 class="text-lg font-bold font-[Poppins] mb-2">Shop</h3>
-                <ul class="space-y-2">
-                    <li><a href="index.html" class="hover:text-blue-400">Home</a></li>
-                    <li><a href="category.html" class="hover:text-blue-400">Categories</a></li>
-                    <li><a href="cart.html" class="hover:text-blue-400">Cart</a></li>
-                    <li><a href="checkout.html" class="hover:text-blue-400">Checkout</a></li>
-                </ul>
+            
+            <ul class="flex border-b mb-6">
+                <li class="mr-1">
+                    <button id="login-tab" class="bg-white inline-block py-2 px-4 font-semibold text-blue-600 border-b-2 border-blue-600">Login</button>
+                </li>
+                <li class="mr-1">
+                    <button id="register-tab" class="bg-white inline-block py-2 px-4 text-gray-600 hover:text-blue-600">Register</button>
+                </li>
+            </ul>
+            
+            <!-- Login Form -->
+            <div id="login-form-container">
+                <form id="login-form" class="space-y-4">
+                    <div>
+                        <label for="login-email" class="block text-gray-700 mb-1">Email</label>
+                        <input type="email" id="login-email" required class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label for="login-password" class="block text-gray-700 mb-1">Password</label>
+                        <input type="password" id="login-password" required class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <button type="submit" class="w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition">
+                        Login
+                    </button>
+                    <div class="text-center mt-2">
+                        <a href="forgot-password.html" class="text-blue-600 hover:underline text-sm">Forgot password?</a>
+                    </div>
+                </form>
             </div>
-            <div>
-                <h3 class="text-lg font-bold font-[Poppins] mb-2">Account</h3>
-                <ul class="space-y-2">
-                    <li><a href="account.html" class="hover:text-blue-400">My Account</a></li>
-                    <li><a href="login.html" class="hover:text-blue-400">Login</a></li>
-                    <li><a href="forgot-password.html" class="hover:text-blue-400">Forgot Password</a></li>
-                    <li><a href="order-details.html" class="hover:text-blue-400">Order History</a></li>
-                </ul>
-            </div>
-            <div>
-                <h3 class="text-lg font-bold font-[Poppins] mb-2">Follow Us</h3>
-                <div class="flex space-x-4">
-                    <a href="#" class="text-xl hover:text-blue-400"><i class="fab fa-facebook"></i></a>
-                    <a href="#" class="text-xl hover:text-blue-400"><i class="fab fa-twitter"></i></a>
-                    <a href="#" class="text-xl hover:text-blue-400"><i class="fab fa-instagram"></i></a>
-                </div>
+            
+            <!-- Register Form (hidden by default) -->
+            <div id="register-form-container" class="hidden">
+                <form id="register-form" class="space-y-4">
+                    <div>
+                        <label for="register-name" class="block text-gray-700 mb-1">Full Name</label>
+                        <input type="text" id="register-name" required class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label for="register-email" class="block text-gray-700 mb-1">Email</label>
+                        <input type="email" id="register-email" required class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div>
+                        <label for="register-password" class="block text-gray-700 mb-1">Password</label>
+                        <input type="password" id="register-password" required class="w-full p-2 border rounded focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <button type="submit" class="w-full bg-green-600 text-white py-2 px-4 rounded hover:bg-green-700 transition">
+                        Register
+                    </button>
+                </form>
             </div>
         </div>
-    </footer>
-    <script src="script.js"></script>
+    </div>
+
     <script>
-        // Mobile menu toggle
-        document.getElementById('hamburger').addEventListener('click', function() {
-            const menu = document.getElementById('mobile-menu');
-            menu.classList.toggle('hidden');
-        });
-
-        // Search functionality
-        document.getElementById('search-button').addEventListener('click', function() {
-            const searchTerm = document.getElementById('search-bar').value;
-            if(searchTerm.trim()) {
-                window.location.href = `category.html?search=${encodeURIComponent(searchTerm)}`;
-            }
-        });
-
-        // Product search filtering
-        document.getElementById('search-bar').addEventListener('input', function(e) {
-            const searchTerm = e.target.value.toLowerCase();
-            const products = document.querySelectorAll('.product-item');
+        // Show modal on page load if not logged in
+        document.addEventListener('DOMContentLoaded', function() {
+            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+            const modal = document.getElementById('login-modal');
             
-            products.forEach(product => {
-                const productName = product.getAttribute('data-name').toLowerCase();
-                if(productName.includes(searchTerm)) {
-                    product.style.display = 'block';
-                } else {
-                    product.style.display = 'none';
-                }
+            if (!isLoggedIn) {
+                modal.style.display = 'flex';
+            }
+            
+            // Tab switching
+            document.getElementById('login-tab').addEventListener('click', function() {
+                document.getElementById('login-form-container').classList.remove('hidden');
+                document.getElementById('register-form-container').classList.add('hidden');
+                this.classList.add('text-blue-600', 'border-b-2', 'border-blue-600');
+                document.getElementById('register-tab').classList.remove('text-blue-600', 'border-b-2', 'border-blue-600');
+            });
+            
+            document.getElementById('register-tab').addEventListener('click', function() {
+                document.getElementById('register-form-container').classList.remove('hidden');
+                document.getElementById('login-form-container').classList.add('hidden');
+                this.classList.add('text-blue-600', 'border-b-2', 'border-blue-600');
+                document.getElementById('login-tab').classList.remove('text-blue-600', 'border-b-2', 'border-blue-600');
+            });
+            
+            // Close modal
+            document.getElementById('close-modal').addEventListener('click', function() {
+                modal.style.display = 'none';
+            });
+            
+            // Login form submission
+            document.getElementById('login-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = document.getElementById('login-email').value;
+                const password = document.getElementById('login-password').value;
+                
+                // Here you would typically send to your backend
+                console.log('Login attempt:', email, password);
+                
+                // For demo, just set as logged in
+                localStorage.setItem('isLoggedIn', 'true');
+                modal.style.display = 'none';
+                window.location.reload();
+            });
+            
+            // Register form submission
+            document.getElementById('register-form').addEventListener('submit', function(e) {
+                e.preventDefault();
+                const name = document.getElementById('register-name').value;
+                const email = document.getElementById('register-email').value;
+                const password = document.getElementById('register-password').value;
+                
+                // Here you would typically send to your backend
+                console.log('Registration attempt:', name, email, password);
+                
+                // For demo, just set as logged in
+                localStorage.setItem('isLoggedIn', 'true');
+                localStorage.setItem('userName', name);
+                modal.style.display = 'none';
+                window.location.reload();
+            });
+            
+            // Login button in header
+            document.getElementById('login-btn').addEventListener('click', function() {
+                modal.style.display = 'flex';
             });
         });
     </script>
