@@ -3,82 +3,86 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - eShop</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <title>Login/Register - eShop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-gray-100">
-    <header class="bg-white shadow">
-        <div class="container mx-auto p-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold font-[Poppins] footer-business-name">eShop</h1>
-            <nav class="hidden md:flex space-x-4">
-                <a href="index.html" class="text-gray-600 hover:text-blue-600">View Store</a>
-                <a href="admin.html" class="text-gray-600 hover:text-blue-600">Admin</a>
-                <a href="login.html" class="text-gray-600 hover:text-blue-600">Login</a>
+<body class="bg-gray-100 font-sans">
+    <!-- Header (Same as index.html) -->
+    <header class="sticky top-0 bg-white shadow z-50">
+        <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="text-2xl font-bold">eShop</div>
+            <div class="hidden md:flex space-x-6">
+                <a href="index.html" class="hover:text-blue-600">Home</a>
+                <a href="category.html" class="hover:text-blue-600">Categories</a>
+                <a href="#offers" class="hover:text-blue-600">Offers</a>
+                <a href="account.html" class="hover:text-blue-600">Account</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="#search class="flex items-center" id="search">
+                    <a href="#search" class="hover:text-blue-600"><i class="fas fa-search"></i></a>
+                    </search>
+                    <a href="cart.html" class="hover:text-blue-600"><i class="fas fa-shopping-cart"></i></a>
+                    <button id="hamburger" class="md:hidden"><i class="fas fa-bars"></i></button>
+                </div>
             </nav>
-            <button id="hamburger" class="md:hidden">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-            </button>
-        </div>
-        <nav id="mobile-menu" class="hidden md:hidden bg-white shadow">
-            <a href="index.html" class="block p-4 text-gray-600 hover:text-blue-600">View Store</a>
-            <a href="admin.html" class="block p-4 text-gray-600 hover:text-blue-600">Admin</a>
-            <a href="login.html" class="block p-4 text-gray-600 hover:text-blue-600">Login</a>
-        </nav>
-    </header>
-    <main class="container mx-auto p-4">
-        <h2 class="text-2xl font-bold mb-4">Login</h2>
-        <div class="bg-white p-4 rounded shadow max-w-md mx-auto">
-            <h3 class="text-lg font-bold mb-4">Sign In</h3>
-            <div class="space-y-4">
-                <div>
-                    <label for="email" class="block">Email</label>
-                    <input type="email" id="email" class="border p-2 rounded w-full" required>
-                </div>
-                <div>
-                    <label for="password" class="block">Password</label>
-                    <input type="password" id="password" class="border p-2 rounded w-full" required>
-                </div>
-                <button id="login-button" class="bg-blue-600 text-white py-2 px-4 rounded w-full">Login</button>
-                <p class="text-center">
-                    <a href="#" id="forgot-password" class="text-blue-600 hover:underline">Forgot Password?</a>
-                </p>
-                <p class="text-center">
-                    <a href="#" id="signup-button" class="text-blue-600 hover:underline">Create an Account</a>
-                </p>
+            <div id="mobile-menu" class="hidden bg-white shadow-md md:hidden">
+                <a href="index.html" class="block px-4 py-2 hover:bg-gray-100">Home</a>
+                <a href="category.html" class="block px-4 py-2 hover:bg-gray-600">Categories</a>
+                <a href="#offers" class="block px-4 py-2 hover:bg-gray-100">Offers</a>
+                <a href="account.html" class="block px-2 hover:bg-gray-100">Account</a>
             </div>
-        </div>
-    </main>
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="container mx-auto p-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div>
-                    <img src="/images/logo.jpg" alt="eShop Logo" class="footer-logo w-32 mb-4">
-                    <p class="footer-business-name">eShop</p>
-                    <p class="footer-contact-email"></p>
-                    <p class="footer-contact-phone"></p>
-                    <p class="footer-address"></p>
-                </div>
-                <div>
-                    <h3 class="text-lg font-bold">Links</h3>
-                    <ul>
-                        <li><a href="index.html" class="hover:text-blue-400">View Store</a></li>
-                        <li><a href="admin.html" class="hover:text-blue-400">Admin</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="text-lg font-bold">Follow Us</h3>
-                    <div class="flex space-x-4">
-                        <a href="#"><img src="https://via.placeholder.com/24" alt="Facebook" class="w-6 h-6"></a>
-                        <a href="#"><img src="https://via.placeholder.com/24" alt="Twitter" class="w-6 h-6"></a>
-                        <a href="#"><img src="https://via.placeholder.com/24" alt="Instagram" class="w-6 h-6"></a>
+        </header>
+    <!-- Login/Register Page -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="grid md:grid-cols-2 gap-8">
+            <!-- Login -->
+            <div class="bg-white p-4 rounded shadow">
+                <h2 class="text-xl font-bold mb-4">Login</h2>
+                <input type="email" placeholder="Email" class="border p-2 rounded w-full mb-2">
+                    <input type="password" placeholder="Password" class="border p-2 rounded w-full mb-2">
+                        <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 w-full">Login</button>
                     </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-    <script src="script.js" type="module"></script>
-</body>
-</html>
+                <!-- Register -->
+                <div class="bg-white p-4 rounded shadow">
+                    <h2 class="text-xl font-bold mb-4">Register</h2>
+                    <input type="text" placeholder="Full Name" class="border p-2 rounded w-full mb-2">
+                        <input type="email" placeholder="Email" class="border p-2 rounded w-full mb-2">
+                            <input type="password" placeholder="Password" class="border p-2 rounded w-full mb-2">
+                                <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 w-full">Register</button>
+                            </div>
+                        </div>
+                    </main>
+                <!-- Footer -->
+                <footer class="bg-gray-800 text-white py-8">
+                    <div class="container mx-auto px-4 grid md:grid-cols-4 gap-8">
+                        <div>
+                            <h3 class="text-lg font-bold">eShop</h3>
+                            <p class="mt-2">Your one-stop shop for everything trendy.</p>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold">Links</h3>
+                            <ul class="mt-2 space-y-2">
+                                <li><a href="index.html" class="hover:text-blue-400">Home</a></li>
+                                <li><a href="category.html" class="hover:text-blue-400">Categories</a></li>
+                                <li><a href="#contact" class="hover:text-blue-400">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold">Policies</h3>
+                            <ul class="mt-2 space-y-2">
+                                <li><a href="#privacy" class="hover:text-blue-400">Privacy Policy</a></li>
+                                <li><a href="#terms" class="hover:text-blue-400">Terms of Service</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold">Follow Us</h3>
+                            <div class="mt-2 flex space-x-4">
+                                <a href="#facebook" class="hover:text-blue-400"><i class="fab fa-facebook"></i></a>
+                                <a href="#instagram" class="hover:text-blue-400"><i class="fab fa-instagram"></i></a>
+                                <a href="#twitter" class="hover:text-blue-400"><i class="fab fa-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            <script src="script.js"></script>
