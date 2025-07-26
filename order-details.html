@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Details - eShop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="font-sans bg-gray-100">
+    <!-- Header -->
+    <header class="sticky top-0 bg-white shadow z-50">
+        <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <a href="index.html" class="text-2xl font-bold font-[Poppins]">eShop</a>
+            <div class="hidden md:flex space-x-6 text-base font-medium">
+                <a href="index.html" class="hover:text-blue-600">Home</a>
+                <a href="category.html" class="hover:text-blue-600">Categories</a>
+                <a href="#offers" class="hover:text-blue-600">Offers</a>
+                <a href="account.html" class="hover:text-blue-600">Account</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="#search" class="hover:text-blue-600"><i class="fas fa-search"></i></a>
+                <a href="cart.html" class="hover:text-blue-600 relative">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count absolute -top-2 -right-2 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
+                </a>
+                <button id="hamburger" class="md:hidden"><i class="fas fa-bars"></i></button>
+            </div>
+        </nav>
+        <div id="mobile-menu" class="hidden bg-white shadow-md md:hidden">
+            <a href="index.html" class="block px-4 py-2 hover:bg-gray-100">Home</a>
+            <a href="category.html" class="block px-4 py-2 hover:bg-gray-100">Categories</a>
+            <a href="#offers" class="block px-4 py-2 hover:bg-gray-100">Offers</a>
+            <a href="account.html" class="block px-4 py-2 hover:bg-gray-100">Account</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8">
+        <div class="bg-white p-6 rounded shadow">
+            <div class="flex justify-between items-center mb-6">
+                <h1 class="text-2xl font-bold font-[Poppins]">Order Details</h1>
+                <a href="account.html#orders" class="text-blue-600 hover:underline">Back to Orders</a>
+            </div>
+
+            <div id="order-loading" class="text-center py-8">
+                <i class="fas fa-spinner fa-spin text-2xl text-blue-500"></i>
+                <p class="mt-2">Loading order details...</p>
+            </div>
+
+            <div id="order-container" class="hidden">
+                <div class="grid md:grid-cols-2 gap-8 mb-8">
+                    <!-- Order Summary -->
+                    <div>
+                        <h2 class="text-xl font-bold font-[Poppins] mb-4">Order Summary</h2>
+                        <div class="bg-gray-50 p-4 rounded">
+                            <div class="flex justify-between mb-2">
+                                <span>Order Number:</span>
+                                <span id="order-number" class="font-semibold"></span>
+                            </div>
+                            <div class="flex justify-between mb-2">
+                                <span>Date:</span>
+                                <span id="order-date"></span>
+                            </div>
+                            <div class="flex justify-between mb-2">
+                                <span>Status:</span>
+                                <span id="order-status" class="px-2 py-1 rounded text-xs"></span>
+                            </div>
+                            <div class="flex justify-between mb-2">
+                                <span>Payment Method:</span>
+                                <span id="order-payment"></span>
+                            </div>
+                            <div class="flex justify-between font-bold mt-4 pt-4 border-t">
+                                <span>Total:</span>
+                                <span id="order-total"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Shipping Address -->
+                    <div>
+                        <h2 class="text-xl font-bold font-[Poppins] mb-4">Shipping Address</h2>
+                        <div class="bg-gray-50 p-4 rounded">
+                            <p id="shipping-name" class="font-semibold"></p>
+                            <p id="shipping-address1"></p>
+                            <p id="shipping-address2"></p>
+                            <p id="shipping-city-state-zip"></p>
+                            <p id="shipping-phone" class="mt-2"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Items -->
+                <div>
+                    <h2 class="text-xl font-bold font-[Poppins] mb-4">Items</h2>
+                    <div id="order-items" class="space-y-4">
+                        <!-- Items will be inserted here by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Order Actions -->
+                <div class="mt-8 pt-8 border-t flex justify-end">
+                    <button id="print-order" class="bg-gray-200 text-gray-800 px-4 py-2 rounded hover:bg-gray-300 mr-2">
+                        <i class="fas fa-print mr-2"></i>Print Order
+                    </button>
+                    <button id="cancel-order" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 hidden">
+                        <i class="fas fa-times mr-2"></i>Cancel Order
+                    </button>
+                    <button id="contact-support" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 ml-2">
+                        <i class="fas fa-headset mr-2"></i>Contact Support
+                    </button>
+                </div>
+            </div>
+
+            <div id="order-error" class="hidden text-center py-8">
+                <i class="fas fa-exclamation-circle text-2xl text-red-500"></i>
+                <p class="mt-2">Unable to load order details. Please try again later.</p>
+                <a href="account.html#orders" class="text-blue-600 hover:underline mt-4 inline-block">Back to Orders</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4 grid md:grid-cols-4 gap-8">
+            <div>
+                <h3 class="text-lg font-bold font-[Poppins]">eShop</h3>
+                <p class="mt-2 text-gray-300">Your one-stop shop for everything trendy.</p>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold font-[Poppins]">Links</h3>
+                <ul class="mt-2 space-y-2">
+                    <li><a href="index.html" class="hover:text-blue-400">Home</a></li>
+                    <li><a href="category.html" class="hover:text-blue-400">Categories</a></li>
+                    <li><a href="#contact" class="hover:text-blue-400">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold font-[Poppins]">Policies</h3>
+                <ul class="mt-2 space-y-2">
+                    <li><a href="#privacy" class="hover:text-blue-400">Privacy Policy</a></li>
+                    <li><a href="#terms" class="hover:text-blue-400">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-lg font-bold font-[Poppins]">Follow Us</h3>
+                <div class="mt-2 flex space-x-4">
+                    <a href="#facebook" class="hover:text-blue-400"><i class="fab fa-facebook"></i></a>
+                    <a href="#instagram" class="hover:text-blue-400"><i class="fab fa-instagram"></i></a>
+                    <a href="#twitter" class="hover:text-blue-400"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Get order ID from URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const orderId = urlParams.get('order_id');
+            
+            if (!orderId) {
+                document.getElementById('order-loading').classList.add('hidden');
+                document.getElementById('order-error').classList.remove('hidden');
+                return;
+            }
+
+            try {
+                // Fetch order details
+                const { data: order, error: orderError } = await supabase
+                    .from('orders')
+                    .select('*, order_items(*, products(name, image_url))')
+                    .eq('id', orderId)
+                    .single();
+
+                if (orderError) throw orderError;
+
+                // Display order information
+                document.getElementById('order-number').textContent = `#${order.id}`;
+                document.getElementById('order-date').textContent = new Date(order.created_at).toLocaleDateString();
+                
+                const statusElement = document.getElementById('order-status');
+                statusElement.textContent = order.status;
+                statusElement.classList.add(
+                    order.status === 'delivered' ? 'bg-green-100 text-green-800' :
+                    order.status === 'shipped' ? 'bg-blue-100 text-blue-800' :
+                    'bg-yellow-100 text-yellow-800'
+                );
+
+                document.getElementById('order-payment').textContent = order.payment_method;
+                document.getElementById('order-total').textContent = `₹${order.total.toFixed(2)}`;
+
+                // Display shipping address
+                const shipping = order.shipping_address;
+                document.getElementById('shipping-name').textContent = shipping.name;
+                document.getElementById('shipping-address1').textContent = shipping.address1;
+                document.getElementById('shipping-address2').textContent = shipping.address2 || '';
+                document.getElementById('shipping-city-state-zip').textContent = `${shipping.city}, ${shipping.state} ${shipping.zip}`;
+                document.getElementById('shipping-phone').textContent = `Phone: ${shipping.phone}`;
+
+                // Display order items
+                const itemsContainer = document.getElementById('order-items');
+                order.order_items.forEach(item => {
+                    const itemElement = document.createElement('div');
+                    itemElement.className = 'flex items-start border-b pb-4';
+                    itemElement.innerHTML = `
+                        <img src="${item.products.image_url}" alt="${item.products.name}" class="w-16 h-16 object-cover rounded mr-4">
+                        <div class="flex-1">
+                            <h3 class="font-semibold">${item.products.name}</h3>
+                            <p class="text-gray-600">₹${item.price.toFixed(2)} × ${item.quantity}</p>
+                        </div>
+                        <div class="font-semibold">₹${(item.price * item.quantity).toFixed(2)}</div>
+                    `;
+                    itemsContainer.appendChild(itemElement);
+                });
+
+                // Show cancel button only for pending orders
+                if (order.status === 'pending') {
+                    document.getElementById('cancel-order').classList.remove('hidden');
+                    document.getElementById('cancel-order').addEventListener('click', async () => {
+                        if (confirm('Are you sure you want to cancel this order?')) {
+                            const { error } = await supabase
+                                .from('orders')
+                                .update({ status: 'cancelled' })
+                                .eq('id', orderId);
+                            
+                            if (error) {
+                                alert('Failed to cancel order. Please try again.');
+                            } else {
+                                alert('Order cancelled successfully.');
+                                window.location.reload();
+                            }
+                        }
+                    });
+                }
+
+                // Print order
+                document.getElementById('print-order').addEventListener('click', () => {
+                    window.print();
+                });
+
+                // Show the order container
+                document.getElementById('order-loading').classList.add('hidden');
+                document.getElementById('order-container').classList.remove('hidden');
+
+            } catch (error) {
+                console.error('Error loading order details:', error);
+                document.getElementById('order-loading').classList.add('hidden');
+                document.getElementById('order-error').classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
