@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Confirmation - eShop</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gray-100 font-sans">
+  <!-- Header (Same as other pages) -->
+  <header class="sticky top-0 bg-white shadow z-50">
+    <!-- ... same header as other pages ... -->
+  </header>
+
+  <main class="container mx-auto px-4 py-8">
+    <div class="bg-white p-8 rounded shadow max-w-2xl mx-auto text-center">
+      <div class="text-green-500 text-5xl mb-4">
+        <i class="fas fa-check-circle"></i>
+      </div>
+      <h1 class="text-2xl font-bold mb-4">Thank you for your order!</h1>
+      
+      <div id="order-details" class="mb-6 text-left">
+        <!-- Order details will be inserted here by JavaScript -->
+      </div>
+      
+      <p class="mb-6">We've sent a confirmation email to your address with your order details.</p>
+      
+      <div class="flex justify-center space-x-4">
+        <a href="account.html" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">
+          View Orders
+        </a>
+        <a href="category.html" class="border border-blue-600 text-blue-600 px-6 py-2 rounded hover:bg-blue-50">
+          Continue Shopping
+        </a>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer (Same as other pages) -->
+  <footer class="bg-gray-800 text-white py-8">
+    <!-- ... same footer as other pages ... -->
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Display order details
+    document.addEventListener('DOMContentLoaded', () => {
+      const urlParams = new URLSearchParams(window.location.search);
+      const orderId = urlParams.get('order_id');
+      
+      if (orderId) {
+        document.getElementById('order-details').innerHTML = `
+          <p class="mb-2"><strong>Order Number:</strong> #${orderId}</p>
+          <p class="mb-4">We'll notify you when your order ships.</p>
+        `;
+      }
+    });
+  </script>
+</body>
+</html>
