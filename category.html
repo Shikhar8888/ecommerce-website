@@ -3,121 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout - eShop</title>
+    <title>eShop</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-gray-100 font-sans">
-    <!-- Header (Same as index.html) -->
-    <header class="sticky top-0 bg-white shadow z-50">
-        <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
-            <div class="text-2xl font-bold">eShop</div>
-            <div class="hidden md:flex space-x-6">
-                <a href="index.html" class="hover:text-blue-600">Home</a>
-                <a href="category.html" class="hover:text-blue-600">Categories</a>
-                <a href="#offers" class="hover:text-blue-600">Offers</a>
-                <a href="#account" class="hover:text-blue-600">Account</a>
+<body class="font-sans">
+    <header class="bg-gray-900 text-white">
+        <nav class="container mx-auto flex justify-between items-center p-4">
+            <a href="index.html" class="text-2xl font-bold">eShop</a>
+            <div class="hidden md:flex space-x-4">
+                <a href="index.html" class="hover:text-gray-300">Home</a>
+                <a href="category.html" class="hover:text-gray-300">Categories</a>
+                <a href="#" class="hover:text-gray-300">Offers</a>
+                <a href="account.html" class="hover:text-gray-300">Account</a>
             </div>
-            <div class="flex items-center space-x-4">
-                <a href="#search" class="hover:text-blue-600"><i class="fas fa-search"></i></a>
-                <a href="cart.html" class="hover:text-blue-600"><i class="fas fa-shopping-cart"></i></a>
-                <button id="hamburger" class="md:hidden"><i class="fas fa-bars"></i></button>
+            <div class="md:hidden">
+                <button id="hamburger" class="text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
             </div>
         </nav>
-        <div id="mobile-menu" class="hidden bg-white shadow-md md:hidden">
-            <a href="index.html" class="block px-4 py-2 hover:bg-gray-100">Home</a>
-            <a href="category.html" class="block px-4 py-2 hover:bg-gray-100">Categories</a>
-            <a href="#offers" class="block px-4 py-2 hover:bg-gray-100">Offers</a>
-            <a href="#account" class="block px-4 py-2 hover:bg-gray-100">Account</a>
+        <div id="mobile-menu" class="hidden bg-gray-800 text-white">
+            <a href="index.html" class="block p-4 hover:bg-gray-700">Home</a>
+            <a href="category.html" class="block p-4 hover:bg-gray-700">Categories</a>
+            <a href="#" class="block p-4 hover:bg-gray-700">Offers</a>
+            <a href="account.html" class="block p-4 hover:bg-gray-700">Account</a>
+        </div>
+        <div class="container mx-auto p-4">
+            <div class="flex items-center space-x-2">
+                <input type="text" id="search-bar" class="w-full p-2 rounded-l-md border-none focus:ring-2 focus:ring-blue-500" placeholder="Search products...">
+                <button id="search-button" class="bg-blue-500 text-white p-2 rounded-r-md hover:bg-blue-600">Search</button>
+            </div>
         </div>
     </header>
-
-    <!-- Checkout Page -->
-    <main class="container mx-auto px-4 py-8">
-        <div class="grid md:grid-cols-3 gap-8">
-            <!-- Checkout Form -->
-            <div class="md:col-span-2">
-                <h1 class="text-2xl font-bold mb-4">Checkout</h1>
-                <div class="bg-white p-4 rounded shadow mb-4">
-                    <h2 class="text-xl font-bold mb-2">Shipping Address</h2>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        <input type="text" placeholder="Full Name" class="border p-2 rounded">
-                        <input type="text" placeholder="Phone Number" class="border p-2 rounded">
-                        <input type="text" placeholder="Address Line 1" class="border p-2 rounded">
-                        <input type="text" placeholder="Address Line 2" class="border p-2 rounded">
-                        <input type="text" placeholder="City" class="border p-2 rounded">
-                        <input type="text" placeholder="State" class="border p-2 rounded">
-                        <input type="text" placeholder="PIN Code" class="border p-2 rounded">
+    <main class="container mx-auto p-4">
+        <div class="flex flex-col md:flex-row gap-4">
+            <aside class="w-full md:w-1/4 bg-gray-100 p-4 rounded">
+                <h2 class="text-xl font-bold mb-4">Filters</h2>
+                <div class="mb-4">
+                    <h3 class="font-semibold">Price</h3>
+                    <input type="range" min="0" max="5000" value="5000" class="w-full">
+                    <p>₹0 - ₹5000</p>
+                </div>
+                <div class="mb-4">
+                    <h3 class="font-semibold">Category</h3>
+                    <label><input type="checkbox" class="mr-2">Men</label><br>
+                    <label><input type="checkbox" class="mr-2">Women</label><br>
+                    <label><input type="checkbox" class="mr-2">Kids</label>
+                </div>
+                <div class="mb-4">
+                    <h3 class="font-semibold">Brand</h3>
+                    <label><input type="checkbox" class="mr-2">Brand A</label><br>
+                    <label><input type="checkbox" class="mr-2">Brand B</label>
+                </div>
+                <div>
+                    <h3 class="font-semibold">Rating</h3>
+                    <label><input type="checkbox" class="mr-2">4★ & above</label><br>
+                    <label><input type="checkbox" class="mr-2">3★ & above</label>
+                </div>
+            </aside>
+            <div class="w-full md:w-3/4">
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-2xl font-bold">Products</h2>
+                    <select class="p-2 rounded">
+                        <option>Relevance</option>
+                        <option>Price: Low to High</option>
+                        <option>Price: High to Low</option>
+                    </select>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                    <div class="bg-white p-4 rounded shadow product-item" data-name="Product Name">
+                        <img src="images/tshirt.jpg" alt="Product Name" class="w-full h-40 object-cover mb-2">
+                        <h3 class="text-lg font-semibold">Product Name</h3>
+                        <p>₹999</p>
+                        <p class="text-yellow-500">★★★★☆</p>
+                        <a href="product.html" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">View</a>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow product-item" data-name="Stylish T-Shirt">
+                        <img src="images/tshirt.jpg" alt="Stylish T-Shirt" class="w-full h-40 object-cover mb-2">
+                        <h3 class="text-lg font-semibold">Stylish T-Shirt</h3>
+                        <p>₹999</p>
+                        <p class="text-yellow-500">★★★★☆</p>
+                        <a href="product.html" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">View</a>
+                    </div>
+                    <div class="bg-white p-4 rounded shadow product-item" data-name="Casual Sneakers">
+                        <img src="images/sneaker.jpg" alt="Casual Sneakers" class="w-full h-40 object-cover mb-2">
+                        <h3 class="text-lg font-semibold">Casual Sneakers</h3>
+                        <p>₹1999</p>
+                        <p class="text-yellow-500">★★★★☆</p>
+                        <a href="product.html" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">View</a>
                     </div>
                 </div>
-                <div class="bg-white p-4 rounded shadow mb-4">
-                    <h2 class="text-xl font-bold mb-2">Delivery Method</h2>
-                    <label><input type="radio" name="delivery" class="mr-2">Standard (3-5 days)</label><br>
-                    <label><input type="radio" name="delivery" class="mr-2">Express (1-2 days)</label>
-                </div>
-                <div class="bg-white p-4 rounded shadow">
-                    <h2 class="text-xl font-bold mb-2">Payment Options</h2>
-                    <label><input type="radio" name="payment" class="mr-2">Cash on Delivery</label><br>
-                    <label><input type="radio" name="payment" class="mr-2">UPI</label><br>
-                    <label><input type="radio" name="payment" class="mr-2">Net Banking</label><br>
-                    <label><input type="radio" name="payment" class="mr-2">Credit/Debit Card</label>
-                </div>
-            </div>
-            <!-- Order Summary -->
-            <div class="bg-white p-4 rounded shadow">
-                <h2 class="text-xl font-bold mb-4">Order Summary</h2>
-                <div class="flex justify-between mb-2">
-                    <span>Subtotal</span>
-                    <span>₹999</span>
-                </div>
-                <div class="flex justify-between mb-2">
-                    <span>Delivery</span>
-                    <span>₹50</span>
-                </div>
-                <div class="flex justify-between mb-2">
-                    <span>Discount</span>
-                    <span>-₹100</span>
-                </div>
-                <div class="flex justify-between font-bold">
-                    <span>Total</span>
-                    <span>₹949</span>
-                </div>
-                <button class="mt-4 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 w-full">Place Order</button>
+                <button class="bg-blue-500 text-white px-4 py-2 rounded mt-4 hover:bg-blue-600">Load More</button>
             </div>
         </div>
     </main>
-
-    <!-- Footer (Same as index.html) -->
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="container mx-auto px-4 grid md:grid-cols-4 gap-8">
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-4">
             <div>
                 <h3 class="text-lg font-bold">eShop</h3>
-                <p class="mt-2">Your one-stop shop for everything trendy.</p>
+                <p>Your one-stop shop for everything trendy.</p>
             </div>
             <div>
                 <h3 class="text-lg font-bold">Links</h3>
-                <ul class="mt-2 space-y-2">
-                    <li><a href="index.html" class="hover:text-blue-400">Home</a></li>
-                    <li><a href="category.html" class="hover:text-blue-400">Categories</a></li>
-                    <li><a href="#contact" class="hover:text-blue-400">Contact</a></li>
+                <ul>
+                    <li><a href="index.html" class="hover:text-gray-300">Home</a></li>
+                    <li><a href="category.html" class="hover:text-gray-300">Categories</a></li>
+                    <li><a href="#" class="hover:text-gray-300">Contact</a></li>
                 </ul>
             </div>
             <div>
                 <h3 class="text-lg font-bold">Policies</h3>
-                <ul class="mt-2 space-y-2">
-                    <li><a href="#privacy" class="hover:text-blue-400">Privacy Policy</a></li>
-                    <li><a href="#terms" class="hover:text-blue-400">Terms of Service</a></li>
+                <ul>
+                    <li><a href="#" class="hover:text-gray-300">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:text-gray-300">Terms of Service</a></li>
                 </ul>
             </div>
             <div>
                 <h3 class="text-lg font-bold">Follow Us</h3>
-                <div class="mt-2 flex space-x-4">
-                    <a href="#facebook" class="hover:text-blue-400"><i class="fab fa-facebook"></i></a>
-                    <a href="#instagram" class="hover:text-blue-400"><i class="fab fa-instagram"></i></a>
-                    <a href="#twitter" class="hover:text-blue-400"><i class="fab fa-twitter"></i></a>
+                <div class="flex space-x-4">
+                    <a href="#"><img src="https://via.placeholder.com/24" alt="Facebook"></a>
+                    <a href="#"><img src="https://via.placeholder.com/24" alt="Twitter"></a>
+                    <a href="#"><img src="https://via.placeholder.com/24" alt="Instagram"></a>
                 </div>
             </div>
         </div>
     </footer>
-
     <script src="script.js"></script>
+</body>
+</html>
