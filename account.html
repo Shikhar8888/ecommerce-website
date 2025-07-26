@@ -4,81 +4,115 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Account - eShop</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body class="bg-gray-100">
-    <header class="bg-white shadow">
-        <div class="container mx-auto p-4 flex justify-between items-center">
-            <h1 class="text-2xl font-bold font-[Poppins] footer-business-name">eShop</h1>
-            <nav class="hidden md:flex space-x-4">
-                <a href="index.html" class="text-gray-600 hover:text-blue-600">View Store</a>
-                <a href="admin.html" class="text-gray-600 hover:text-blue-600">Admin</a>
-                <a href="login.html" class="text-gray-600 hover:text-blue-600">Login</a>
-            </nav>
-            <button id="hamburger" class="md:hidden">
-                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                </svg>
-            </button>
-        </div>
-        <nav id="mobile-menu" class="hidden md:hidden bg-white shadow">
-            <a href="index.html" class="block p-4 text-gray-600 hover:text-blue-600">View Store</a>
-            <a href="admin.html" class="block p-4 text-gray-600 hover:text-blue-600">Admin</a>
-            <a href="login.html" class="block p-4 text-gray-600 hover:text-blue-600">Login</a>
+<body class="bg-gray-100 font-sans">
+    <!-- Header (Same as index.html) -->
+    <header class="sticky top-0 bg-white shadow z-50">
+        <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="text-2xl font-bold">eShop</div>
+            <div class="hidden md:flex space-x-6">
+                <a href="index.html" class="hover:text-blue-600">Home</a>
+                <a href="category.html" class="hover:text-blue-600">Categories</a>
+                <a href="#offers" class="hover:text-blue-600">Offers</a>
+                <a href="account.html" class="hover:text-blue-600">Account</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="#search" class="hover:text-blue-600"><i class="fas fa-search"></i></a>
+                <a href="cart.html" class="hover:text-blue-600"><i class="fas fa-shopping-cart"></i></a>
+                <button id="hamburger" class="md:hidden"><i class="fas fa-bars"></i></button>
+            </div>
         </nav>
+        <div id="mobile-menu" class="hidden bg-white shadow-md md:hidden">
+            <a href="index.html" class="block px-4 py-2 hover:bg-gray-100">Home</a>
+            <a href="category.html" class="block px-4 py-2 hover:bg-gray-100">Categories</a>
+            <a href="#offers" class="block px-4 py-2 hover:bg-gray-100">Offers</a>
+            <a href="account.html" class="block px-4 py-2 hover:bg-gray-100">Account</a>
+        </div>
     </header>
-    <main class="container mx-auto p-4">
-        <h2 class="text-2xl font-bold mb-4">Account</h2>
-        <div class="bg-white p-4 rounded shadow mb-4">
-            <h3 class="text-lg font-bold">Order History</h3>
-            <table class="w-full border-collapse">
-                <thead>
-                    <tr class="bg-gray-200">
-                        <th class="p-2">Order ID</th>
-                        <th class="p-2">Customer</th>
-                        <th class="p-2">Total</th>
-                        <th class="p-2">Status</th>
-                        <th class="p-2">Date</th>
-                        <th class="p-2">Actions</th>
-                    </tr>
-                </thead>
-                <tbody id="order-table-body"></tbody>
-            </table>
-        </div>
-        <div class="bg-white p-4 rounded shadow">
-            <h3 class="text-lg font-bold">Notifications</h3>
-            <div id="notifications"></div>
-        </div>
-    </main>
-    <footer class="bg-gray-800 text-white py-8">
-        <div class="container mx-auto p-4">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+    <!-- Account Page -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="grid md:grid-cols-4 gap-8">
+            <!-- Sidebar -->
+            <aside class="md:col-span-1 bg-white p-4 rounded shadow">
+                <h2 class="text-xl font-bold mb-4">My Account</h2>
+                <a href="#dashboard" class="block py-2 hover:text-blue-600">Dashboard</a>
+                <a href="#orders" class="block py-2 hover:text-blue-600">My Orders</a>
+                <a href="#wishlist" class="block py-2 hover:text-blue-600">Wishlist</a>
+                <a href="#addresses" class="block py-2 hover:text-blue-600">Saved Addresses</a>
+                <a href="#profile" class="block py-2 hover:text-blue-600">Profile</a>
+            </aside>
+            <!-- Main Content -->
+            <div class="md:col-span-3 bg-white p-4 rounded shadow">
+                <h1 class="text-2 font-bold mb-4">Dashboard</h1>
+                <p>Welcome, John Doe!</p>
+                <!-- Orders -->
+                <section id="orders" class="mt-8">
+                    <h2 class="text-xl font-bold mb-4">My Orders</h2>
+                    <div class="border p-4 mb-4">
+                        <p><strong>Order #12345</strong> - ₹999 - Delivered</p>
+                    </div>
+                </section>
+                <!-- Wishlist -->
+                <section id="wishlist" class="mt-8">
+                    <h2 class="text-xl font-bold mb-4">Wishlist</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="bg-gray-100 p-4 rounded">
+                            <h3>Product Name</h3>
+                            <p>₹999</p>
+                        </div>
+                    </section>
+                    <!-- Addresses -->
+                    <section id="addresses" class="mt-8">
+                        <h2 class="text-xl font-bold mb-4">Saved Addresses</h2>
+                        <div class="border p-4 mb-4">
+                            <p>123 Main St, City, ST 12345</p>
+                        </div>
+                    </section>
+                <!-- Profile -->
+                    <section id="profile" class="mt-8">
+                        <h2 class="text-xl font-bold mb-4">Profile</h2>
+                        <input type="text" placeholder="Name" class="border p-2 rounded w-full mb-2">
+                            <input type="email" placeholder="Email" class="border p-2 rounded w-full mb-2">
+                            <button class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Save Changes</button>
+                        </section>
+                    </div>
+            </div>
+        </main>
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white text-white py-8">
+        <div class="container">
+            <div class="mx-auto px-4 grid py-4 md:grid">
                 <div>
-                    <img src="/images/logo.jpg" alt="eShop Logo" class="footer-logo w-32 mb-4">
-                    <p class="footer-business-name">eShop</p>
-                    <p class="footer-contact-email"></p>
-                    <p class="footer-contact-phone"></p>
-                    <p class="footer-address"></p>
+                    <h3> class="text-lg font-bold">eShop</h3>
+                    <p class="mt-2">Your one-stop shop for everything trendy.</p>
+                    </div>
+                <div>
+                <div>
+                    <h3> class="text-lg font-bold">Links</h3>
+                    <ul class="mt-2 space-y-2">
+                        <li><a href="index.html" class="hover:text-blue-400">Home</a></li>
+                        <li><a href="category.html" class="hover:text-blue-400">Categories</a></li>
+                        <li><a href="#contact" class="hover:text-blue-400">Contact</a></li>
+                    </ul>
                 </div>
                 <div>
-                    <h3 class="text-lg font-bold">Links</h3>
-                    <ul>
-                        <li><a href="index.html" class="hover:text-blue-400">View Store</a></li>
-                        <li><a href="admin.html" class="hover:text-blue-400">Admin</a></li>
+                    <h3 class="text-lg font-bold">Policies</h3>
+                    <ul class="mt-2 space-y-2">
+                        <li><a href="#privacy" class="hover:text-blue-400">Privacy Policy</a></li>
+                        <li><a href="#terms" class="hover:text-blue-400">Terms of Service</a></li>
                     </ul>
                 </div>
                 <div>
                     <h3 class="text-lg font-bold">Follow Us</h3>
-                    <div class="flex space-x-4">
-                        <a href="#"><img src="https://via.placeholder.com/24" alt="Facebook" class="w-6 h-6"></a>
-                        <a href="#"><img src="https://via.placeholder.com/24" alt="Twitter" class="w-6 h-6"></a>
-                        <a href="#"><img src="https://via.placeholder.com/24" alt="Instagram" class="w-6 h-6"></a>
+                    <div class="mt-2 flex space-x-4">
+                        <a href="#facebook" class="hover:text-blue-400"><i class="fab fa-facebook"></i></a>
+                        <a href="#instagram" class="hover:text-blue-400"><i class="fab fa-instagram"></i></a>
+                        <a href="#twitter" class="hover:text-blue-400"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
             </div>
-        </div>
-    </footer>
-    <script src="script.js" type="module"></script>
-</body>
-</html>
+        </footer>
+    <script src="script.js"></script>
